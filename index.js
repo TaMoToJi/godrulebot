@@ -1,5 +1,5 @@
 const Discord = require("discord.js");
-const bot = new Discord.Constants.Permissions["ADMINISTRATOR"];
+const bot = new Discord.Constants.Permissions["administrator"];
 
 
 bot.on("ready", async () => {
