@@ -4,7 +4,7 @@ const bot = new Discord.Client({disableEveryone: true});
 
 bot.on("ready", async () => {
   console.log(`${bot.user.username} is online!`);
-  bot.user.setActivity(`with HeaLOng`);
+  bot.user.setActivity(`Use >>help for help`);
 });
 
 bot.on("message", async message => {
@@ -84,8 +84,8 @@ bot.on("message", async message => {
 
  if(cmd === `${prefix}embed`){
  message.channel.send({embed: {
-  color: 3447003,
-  description: "A very simple Embed!"
+ color: 3447003,
+ description: "A very simple Embed!"
 }});
 });
 
