@@ -72,8 +72,8 @@ bot.on("message", async message => {
       .catch(error => message.reply(`Couldn't delete messages because of: ${error}`));
   }
 
- if(cmd === `${prefix}serverrule`){
-  message.channel.send({embed: {
+ if(cmd === `${prefix}serverinfo`){
+   message.channel.send({embed: {
     color: 3447003,
     author: {
       name: client.user.username,
@@ -99,9 +99,7 @@ bot.on("message", async message => {
     footer: {
       icon_url: client.user.avatarURL,
       text: "© Thank For Support Server Alway"
-    }
-  }
-});
+}
 });
 
 bot.login(process.env.token);
