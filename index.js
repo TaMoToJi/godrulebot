@@ -11,7 +11,7 @@ bot.on("message", async message => {
 
   if (message.author.bot) return;
   if (message.channel.type === "dm") return;
-  if(message.author.id !== config.ownerID) return;
+  if (message.author.id !== config.ownerID) return;
 
   let prefix = '>>';
   let messageArray = message.content.split(" ");
