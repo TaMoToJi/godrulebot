@@ -24,9 +24,10 @@ bot.on("message", async message => {
     message.reply(message.author.avatarURL);
   }
 
-  if (cmd === `${prefix}kick`){
-    let member = message.mentions.members.first();
-    member.kick();
+  if(cmd === `${prefix}say`){
+  let text = args.slice(1).join(" ");
+  message.delete();
+  message.channel.send(text);
 }
 });
 
