@@ -84,6 +84,23 @@ bot.on("message", async message => {
     message.reply(`𝐇𝐚𝐬 𝐁𝐞𝐞𝐧 𝐁𝐚𝐧 ${member.user.tag} 𝐅𝐫𝐨𝐦 𝐒𝐞𝐫𝐯𝐞𝐫 𝐑𝐞𝐚𝐬𝐨𝐧:${reason}`);
   }
 
+ if(cmd === `${prefix}test`{
+   message.channel.send({embed: {
+    color: 3447003,
+    title: "This is an embed (Title)",
+    description: "Embed! (first line)\nsecond line of Desc\nthird line of 
+   Desc",
+    footer: 
+    {
+        text: "Footnote ©"
+    }
+  }});
+} else   if (message.content.startsWith(config.prefix + "test")) 
+  {
+  message.reply("Bot active");
+
+
+  };
 });
 
 bot.login(process.env.token);
