@@ -18,10 +18,10 @@ bot.on("message", async message => {
   let args = messageArray.slice(1);
   
   if (cmd === `${prefix}help`){
-    message.channel.send("`BOT` **Commands** : \n ```Avatar - Gets a user's avatar```");
+    message.channel.send("`BOT` **Commands** : \n ```avatar - Gets a user's avatar \n say - {TEXT} u want type```");
   }
 
-  if (message.content === `${prefix}Avatar`){
+  if (message.content === `${prefix}avatar`){
     message.reply(message.author.avatarURL);
     message.delete();
     message.channel.send(text);
@@ -33,6 +33,11 @@ bot.on("message", async message => {
   let text = args.slice(1).join(" ");
   message.delete();
   message.channel.send(text);
+}
+
+ if(cmd === `${prefix}ping`){
+ const m = await message.channel.send("Ping?");
+    m.edit(`Pong! Latency is ${m.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(client.ping)}ms`);
 }
 });
 
