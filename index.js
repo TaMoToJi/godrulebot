@@ -41,7 +41,7 @@ bot.on("message", async message => {
 }
 
  if(cmd === `${prefix}ping`){
- message.channel.send(new Date().getTime() - `message.createdTimestamp + " ms"`);
+ message.channel.send(new Date().getTime() - message.createdTimestamp + " ms");
 
 }
 
@@ -71,6 +71,37 @@ bot.on("message", async message => {
     message.channel.bulkDelete(fetched)
       .catch(error => message.reply(`Couldn't delete messages because of: ${error}`));
   }
+
+ if(cmd === `${prefix}serverrule`){
+  message.channel.send({embed: {
+    color: 3447003,
+    author: {
+      name: client.user.username,
+      icon_url: client.user.avatarURL
+    },
+    title: "ServerRules",
+    url: "http://google.com",
+    description: "Please Read a ServerRules",
+    fields: [{
+        name: "ServerRulesList",
+        value: "1. No Spamming :speak_no_evil:\n2. No Bullying :sweat:\n3. No Asking From Staff :pray:\n4. Use The Right Channels :pencil:\n5. No Abusing :busts_in_silhouette:\n6. No Swearing :speaking_head:"
+      },
+      {
+        name: "ServerLink",
+        value: "Click Here To Copy Link [GodRuleServer](http://discord.gg/7mS9GEY)."
+      },
+      {
+        name: "Server-Create",
+        value: "Owner:__**ᴛᴀᴍᴏᴛᴏᴊɪ✓ᵛᵉʳᶦᶠᶦᵉᵈ#5881**__"
+      }
+    ],
+    timestamp: new Date(),
+    footer: {
+      icon_url: client.user.avatarURL,
+      text: "© Thank For Support Server Alway"
+    }
+  }
+});
 });
 
 bot.login(process.env.token);
