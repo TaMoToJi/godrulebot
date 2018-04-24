@@ -46,7 +46,7 @@ bot.on("message", async message => {
 }
 
  if(cmd === `${prefix}kick`){
-    if(!message.member.roles.some(r=>["Administrator", "Moderator"].includes(r.name)) )
+    if(!message.member.roles.some(r=>["OWNER", "ADMIN"].includes(r.name)) )
       return message.reply("Sorry, you don't have permissions to use this!");
     let member = message.mentions.members.first() || message.guild.members.get(args[0]);
     if(!member)
