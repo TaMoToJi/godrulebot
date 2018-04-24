@@ -16,7 +16,7 @@ bot.on("message", async message => {
   let cmd = messageArray[0];
   let args = messageArray.slice(1);
 
-  if (cmd === `${prefix}help`) {
+  if (cmd === `${prefix}help`){
     message.channel.send("`BOT`allow use comingsoon");
   }
 
@@ -24,7 +24,7 @@ bot.on("message", async message => {
     message.reply(message.author.avatarURL);
   }
 
-  if (command === `${prefix}kick`) {
+  if (cmd === `${prefix}kick`){
     let modRole = message.guild.roles.find("name", "Mods");
     if(!message.member.roles.has(modRole.id)) {
       return message.reply("You pleb, you don't have the permission to use this command.").catch(console.error);
