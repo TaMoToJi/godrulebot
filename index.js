@@ -24,7 +24,7 @@ bot.on("message", async message => {
   }
 
   if (message.content === `${prefix}avatar`){
-    message.sendMessage(message.author.avatarURL);
+    client.sendMessage(message.author.avatarURL);
     message.delete();
     message.channel.send(text);
   }
