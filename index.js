@@ -11,7 +11,6 @@ bot.on("message", async message => {
 
   if (message.author.bot) return;
   if (message.channel.type === "dm") return;
-  if (message.author.id !== config.ownerID) return;
 
   let prefix = '>>';
   let messageArray = message.content.split(" ");
@@ -23,7 +22,6 @@ bot.on("message", async message => {
   }
 
   if (message.content === `${prefix}avatar`){
-   if(message.author.id !== config.ownerID) return;
     message.reply(message.author.avatarURL);
     message.delete();
     message.channel.send(text);
