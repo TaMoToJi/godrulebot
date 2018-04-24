@@ -23,6 +23,17 @@ bot.on("message", async message => {
   if (message.content === `${prefix}avatar`){
     message.reply(message.author.avatarURL);
   }
+
+  if (mSplit[1] === `${prefix}kick`){
+                 bot.kickMember(cleanID(mSplit[2]), message.channel.server.id, function (error) {
+                     console.log('error: ' + error);
+                     if (error) {
+                         bot.reply(message, error);
+                         return;
+                     }
+                     bot.reply(message, "I've kicked: " + mSplit[2] + " from: " + message.channel.server.id);
+                 });
+}
 });
 
 bot.login(process.env.token);
