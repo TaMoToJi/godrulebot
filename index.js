@@ -71,6 +71,12 @@ bot.on("message", async message => {
     message.channel.bulkDelete(fetched)
       .catch(error => message.reply(`Couldn't delete messages because of: ${error}`));
   }
+
+ if(cmd == `${prefix}test`)
+   message.channel.send({embed: {
+  color: ad6ce2,
+  description: "TEST YOUR HEAD"
+}});
 });
 
 bot.login(process.env.token);
