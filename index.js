@@ -30,6 +30,9 @@ bot.on("message", async message => {
   let text = args.slice(1).join(" ");
   message.delete();
   message.channel.send(text);
+  hasPermission(msg) {
+    if (!this.client.isOwner(msg.author)) return 'Only the bot owner(s) may use this command.';
+    return true;
 }
 });
 
