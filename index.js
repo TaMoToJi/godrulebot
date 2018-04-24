@@ -17,7 +17,6 @@ bot.on("message", async message => {
   let cmd = messageArray[0];
   let args = messageArray.slice(1);
   
-  let myRole = message.guild.roles.get("438160518293880832");
   if (cmd === `${prefix}help`){
     message.channel.send("`BOT` **Commands** : \n ```Avatar - Gets a user's avatar```");
   }
@@ -28,8 +27,6 @@ bot.on("message", async message => {
 
   if(cmd === `${prefix}say`){
   let text = args.slice(1).join(" ");
-  let myRole = message.guild.roles.get("438160518293880832");
-  userPermissions: ['MANAGE_MESSAGES'],
   message.delete();
   message.channel.send(text);
 }
