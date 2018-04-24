@@ -73,9 +73,9 @@ bot.on("message", async message => {
   }
 
  if(cmd == `${prefix}test`)
-   message.channel.send({embed: {
-  color: ad6ce2,
-  description: "TEST YOUR HEAD"
+ message.channel.send({embed: {
+ color: ad6ce2,
+ description: "TEST YOUR HEAD"
 }});
 });
 
