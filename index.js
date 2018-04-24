@@ -29,6 +29,7 @@ bot.on("message", async message => {
   if(cmd === `${prefix}say`){
   let text = args.slice(1).join(" ");
   let myRole = message.guild.roles.get("438160518293880832");
+  userPermissions: ['MANAGE_MESSAGES'],
   message.delete();
   message.channel.send(text);
 }
