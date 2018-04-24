@@ -82,11 +82,11 @@ bot.on("message", async message => {
     message.reply(`𝐇𝐚𝐬 𝐁𝐞𝐞𝐧 𝐁𝐚𝐧 ${member.user.tag} 𝐅𝐫𝐨𝐦 𝐒𝐞𝐫𝐯𝐞𝐫 𝐑𝐞𝐚𝐬𝐨𝐧:${reason}`);
   }
 
- if(cmd === `${prefix}embed`){
- message.channel.send({embed: {
- color: 3447003,
- description: "A very simple Embed!"
-}});
+client.on("guildMemberAdd", (member) => {
+  const guild = member.guild;
+  if (!newUsers[guild.id]) newUsers[guild.id] = new Discord.Collection();
+  newUsers[guild.id].set(member.id, member.user);
+
 });
 
 bot.login(process.env.token);
