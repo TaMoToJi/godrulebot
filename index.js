@@ -28,7 +28,7 @@ bot.on("message", async message => {
   }
 
   if(cmd === `${prefix}say`){
-   if(!message.member.roles.some(r=>["Administrator", "Moderator"].includes(r.name)) )
+   if(!message.member.roles.some(r=>["Administrator", "Moderator"].includes(r.OWNER)) )
       return message.reply("Sorry, you don't have permissions to use this!");
   let text = args.slice(1).join(" ");
   message.delete();
