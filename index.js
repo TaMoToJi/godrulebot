@@ -95,12 +95,6 @@ bot.on("message", async message => {
         text: "Footnote ©"
     }
   }});
-} else   if (message.content.startsWith(config.prefix + "test")) 
-  {
-  message.reply("Bot active");
-
-
-  };
 });
 
 bot.login(process.env.token);
