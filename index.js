@@ -84,16 +84,6 @@ bot.on("message", async message => {
     message.reply(`𝐇𝐚𝐬 𝐁𝐞𝐞𝐧 𝐁𝐚𝐧 ${member.user.tag} 𝐅𝐫𝐨𝐦 𝐒𝐞𝐫𝐯𝐞𝐫 𝐑𝐞𝐚𝐬𝐨𝐧:${reason}`);
   }
 
- if(cmd === `${prefix}dlink`){
- message.channel.sendMessage({
-        "embed": {
-                title: 'Discord Server Links',
-                url: 'http://discord.gg/7mS9GEY',
-                "image": {
-                "url": "http://api.buienradar.nl/image/1.0/RadarMapNL?a=.gif",
-                }
-            }
-        });
 });
 
 bot.login(process.env.token);
