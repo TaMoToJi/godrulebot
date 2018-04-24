@@ -30,9 +30,6 @@ bot.on("message", async message => {
   if(cmd === `${prefix}say`){
    if(!message.member.roles.some(r=>["OWNER", "ADMIN"].includes(r.name)) )
       return message.reply("Sorry, you don't have permissions to use this!");
-   let member = message.mentions.members.first() || message.guild.members.get(args[0]);
-    if(!member)
-      return message.reply("Mention @user [TEXT]");
   let text = args.slice(1).join(" ");
   message.delete();
   message.channel.send(text);
