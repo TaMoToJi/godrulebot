@@ -20,13 +20,9 @@ bot.on("message", async message => {
     message.channel.send("`BOT`allow use comingsoon");
   }
 
-  if (cmd === `${prefix}avatar`){
-    request.get(message.content.substr(11)).pipe(fs.createWriteStream('./setavatar.png'));
-    client.user.setAvatar(fs.readFileSync('./setavatar.png')).then(user => { message.channel.send('✔ Operation successful'); console.log('New Avatar set!'); })
-        .catch((error) => { message.channel.send('× Operation failed'); console.log('Error on setavatar command:', error); });
-    
-    return;
-}
+  if (message.content === `${prefix}avatar`){
+    message.reply(message.author.avatarURL);
+  }
 });
 
 bot.login(process.env.token);
