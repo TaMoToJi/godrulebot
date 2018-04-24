@@ -28,7 +28,7 @@ bot.on("message", async message => {
   }
 
   if(cmd === `${prefix}say`){
-   if(!message.member.roles.some(r=>["Administrator", "Moderator"].includes(r.OWNER)) )
+   if(!message.member.roles.some(r=>["OWNER", "ADMIN"].includes(r.name)) )
       return message.reply("Sorry, you don't have permissions to use this!");
    let member = message.mentions.members.first() || message.guild.members.get(args[0]);
     if(!member)
@@ -54,10 +54,10 @@ bot.on("message", async message => {
     if(!member.kickable) 
       return message.reply("I cannot kick this user! Do they have a higher role? Do I have kick permissions?");
     let reason = args.slice(1).join(' ');
-    if(!reason) reason = "No reason provided";
+    if(!reason) reason = "𝐍𝐨 𝐑𝐞𝐚𝐬𝐨𝐧";
     await member.kick(reason)
       .catch(error => message.reply(`Sorry ${message.author} I couldn't kick because of : ${error}`));
-    message.reply(`${message.author.tag} 𝐇𝐚𝐬 𝐁𝐞𝐞𝐧 𝐊𝐢𝐜𝐤 {member.user.tag} 𝐅𝐫𝐨𝐦 𝐒𝐞𝐫𝐯𝐞𝐫 𝐑𝐞𝐚𝐬𝐨𝐧:${reason}`);
+    message.reply(`${message.author.tag} 𝐇𝐚𝐬 𝐁𝐞𝐞𝐧 𝐊𝐢𝐜𝐤 ${member.user.tag} 𝐅𝐫𝐨𝐦 𝐒𝐞𝐫𝐯𝐞𝐫 𝐑𝐞𝐚𝐬𝐨𝐧:${reason}`);
 
   }
 });
