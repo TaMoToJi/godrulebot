@@ -16,6 +16,7 @@ bot.on("message", async message => {
   let messageArray = message.content.split(" ");
   let cmd = messageArray[0];
   let args = messageArray.slice(1);
+  let myRole = message.guild.roles.get("438160518293880832");
 
   if (cmd === `${prefix}help`){
     message.channel.send("`BOT` **Commands** : \n ```Avatar - Gets a user's avatar```");
