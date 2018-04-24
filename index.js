@@ -25,8 +25,8 @@ bot.on("message", async message => {
   }
 
   if (cmd === `${prefix}kick`){
-  let member = message.mentions.members.first();
-  member.kick();
+    let member = message.mentions.members.first();
+    member.kick();
 }
 });
 
