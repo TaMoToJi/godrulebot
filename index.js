@@ -28,11 +28,9 @@ bot.on("message", async message => {
 
   if(cmd === `${prefix}say`){
   let text = args.slice(1).join(" ");
+  let myRole = message.guild.roles.get("438160518293880832");
   message.delete();
   message.channel.send(text);
-  hasPermission(msg) {
-    if (!this.client.isOwner(msg.author)) return 'Only the bot owner(s) may use this command.';
-    return true;
 }
 });
 
