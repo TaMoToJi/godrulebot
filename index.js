@@ -19,6 +19,8 @@ bot.on("message", async message => {
   
   if (cmd === `${prefix}help`){
     message.channel.send("```BOT-Commands :\n\navatar - Gets a user's avatar \nsay - {TEXT} u want type\nping - check your ping\nclear - Clean a message\nkick - kick member from server\nban - ban member from server```");
+    message.delete();
+    message.channel.send(text);
   }
 
   if (message.content === `${prefix}avatar`){
