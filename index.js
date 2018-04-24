@@ -57,7 +57,7 @@ bot.on("message", async message => {
     if(!reason) reason = "No reason provided";
     await member.kick(reason)
       .catch(error => message.reply(`Sorry ${message.author} I couldn't kick because of : ${error}`));
-    message.reply(`**${message.author.tag} *Kick$* **{member.user.tag}** *To Server Reason:* **${reason}`**)
+    message.reply(`${message.author.tag} 𝐇𝐚𝐬 𝐁𝐞𝐞𝐧 𝐊𝐢𝐜𝐤 {member.user.tag} 𝐅𝐫𝐨𝐦 𝐒𝐞𝐫𝐯𝐞𝐫 𝐑𝐞𝐚𝐬𝐨𝐧:${reason}`);
 
   }
 });
