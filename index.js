@@ -45,14 +45,14 @@ bot.on("message", async message => {
       return message.reply("Sorry, you don't have permissions to use this!");
     let member = message.mentions.members.first() || message.guild.members.get(args[0]);
     if(!member)
-      return message.reply("Please mention a valid member of this server");
+      return message.reply("Please Mention a valid member of this server");
     if(!member.kickable) 
       return message.reply("I cannot kick this user! Do they have a higher role? Do I have kick permissions?");
     let reason = args.slice(1).join(' ');
     if(!reason) reason = "𝐍𝐨 𝐑𝐞𝐚𝐬𝐨𝐧";
     await member.kick(reason)
       .catch(error => message.reply(`Sorry ${message.author} I couldn't kick because of : ${error}`));
-    message.reply(`${message.author.tag} 𝐇𝐚𝐬 𝐁𝐞𝐞𝐧 𝐊𝐢𝐜𝐤 ${member.user.tag} 𝐅𝐫𝐨𝐦 𝐒𝐞𝐫𝐯𝐞𝐫 𝐑𝐞𝐚𝐬𝐨𝐧:${reason}`);
+    message.reply(`𝐇𝐚𝐬 𝐁𝐞𝐞𝐧 𝐊𝐢𝐜𝐤 ${member.user.tag} 𝐅𝐫𝐨𝐦 𝐒𝐞𝐫𝐯𝐞𝐫 𝐑𝐞𝐚𝐬𝐨𝐧:${reason}`);
 
   }
 
@@ -72,14 +72,14 @@ bot.on("message", async message => {
       return message.reply("Sorry, you don't have permissions to use this!");   
     let member = message.mentions.members.first();
     if(!member)
-      return message.reply("Please mention a valid member of this server");
+      return message.reply("Please Mention a valid member of this server");
     if(!member.bannable) 
       return message.reply("I cannot ban this user! Do they have a higher role? Do I have ban permissions?");
     let reason = args.slice(1).join(' ');
     if(!reason) reason = "𝐍𝐨 𝐑𝐞𝐚𝐬𝐨𝐧";  
     await member.ban(reason)
       .catch(error => message.reply(`Sorry ${message.author} I couldn't ban because of : ${error}`));
-    message.reply(`${message.author.tag} 𝐇𝐚𝐬 𝐁𝐞𝐞𝐧 𝐁𝐚𝐧 ${member.user.tag} 𝐅𝐫𝐨𝐦 𝐒𝐞𝐫𝐯𝐞𝐫 𝐑𝐞𝐚𝐬𝐨𝐧:${reason}`);
+    message.reply(`𝐇𝐚𝐬 𝐁𝐞𝐞𝐧 𝐁𝐚𝐧 ${member.user.tag} 𝐅𝐫𝐨𝐦 𝐒𝐞𝐫𝐯𝐞𝐫 𝐑𝐞𝐚𝐬𝐨𝐧:${reason}`);
   }
 });
 
