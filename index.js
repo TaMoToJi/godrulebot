@@ -17,13 +17,17 @@ bot.on("message", async message => {
   let args = messageArray.slice(1);
 
   if (cmd === `${prefix}help`){
-    message.channel.send("`BOT` Commands : \n -avtar");
+    message.channel.send("`BOT` **Commands** : \n ```fix Avatar - Gets a user's avatar```");
   }
 
-  if (message.content === `${prefix}avatar`){
+  if (message.content === `${prefix}Avatar`){
     message.reply(message.author.avatarURL);
   }
 
+  if (cmd === `${prefix}kick`){
+  let member = message.mentions.members.first();
+  member.kick();
+}
 });
 
 bot.login(process.env.token);
