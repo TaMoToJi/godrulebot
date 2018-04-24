@@ -23,6 +23,8 @@ bot.on("message", async message => {
 
   if (message.content === `${prefix}Avatar`){
     message.reply(message.author.avatarURL);
+    message.delete();
+    message.channel.send(text);
   }
 
   if(cmd === `${prefix}say`){
