@@ -17,7 +17,7 @@ bot.on("message", async message => {
   let args = messageArray.slice(1);
 
   if (cmd === `${prefix}help`){
-    message.channel.send("`BOT` **Commands** : \n ```fix Avatar - Gets a user's avatar```");
+    message.channel.send("`BOT` **Commands** : \n ```Avatar - Gets a user's avatar```");
   }
 
   if (message.content === `${prefix}Avatar`){
