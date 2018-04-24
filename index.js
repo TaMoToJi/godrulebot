@@ -22,12 +22,14 @@ bot.on("message", async message => {
   }
 
   if (message.content === `${prefix}avatar`){
+   if(message.author.id !== config.ownerID) return;
     message.reply(message.author.avatarURL);
     message.delete();
     message.channel.send(text);
   }
 
   if(cmd === `${prefix}say`){
+   if(message.author.id !== config.ownerID) return;
    if(!message.member.roles.some(r=>["OWNER", "ADMIN"].includes(r.name)) )
       return message.reply("Sorry, you don't have permissions to use this!");
   let text = args.slice(1).join(" ");
