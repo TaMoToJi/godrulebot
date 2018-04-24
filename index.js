@@ -17,18 +17,13 @@ bot.on("message", async message => {
   let args = messageArray.slice(1);
 
   if (cmd === `${prefix}help`){
-    message.channel.send("`BOT`allow use comingsoon");
+    message.channel.send("`BOT` Commands : \n -avtar");
   }
 
   if (message.content === `${prefix}avatar`){
     message.reply(message.author.avatarURL);
   }
 
-  if (cmd === `${prefix}kick`){
-    let modRole = message.guild.roles.find("name", "Mods");
-    if(!message.member.roles.has(modRole.id)) {
-      return message.reply("You pleb, you don't have the permission to use this command.").catch(console.error);
-    }
 });
 
 bot.login(process.env.token);
