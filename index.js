@@ -1,6 +1,8 @@
 const Discord = require("discord.js");
 const bot = new Discord.Client({disableEveryone: false});
 
+"ownerID": "356510829920780289"
+
 bot.on("ready", async () => {
   console.log(`${bot.user.username} is online!`);
   bot.user.setActivity(`Use >>help for help`);
