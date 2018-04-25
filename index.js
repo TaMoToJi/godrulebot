@@ -174,7 +174,7 @@ bot.on("message", async message => {
     .setAuthor("TaMoToJi's Help Commands", "https://cdn.discordapp.com/avatars/438160518293880832/0301fdd6dffcaf6751d33a809a32941d.png?size=2048")
     .setColor("#ae67fc")
     .setTitle("Hello!I’m TamotoJi\nStandard Command List\n140+ commands, Music, Fun, Image, Moderation, General command, Use24/7\nAll in one,All in TamotoJiUse #help [command] to get more info on a seacific command ")
-    .setTitle("**>>LINKS**")   
+    .setDescription("**>>LINKS**")   
     .setDescription(":discordred:[**ClickHere**](https://discordapp.com/oauth2/authorize?client_id=438160518293880832&permissions=268681270&scope=bot) To Invite TaMoToJi `BOT`")
     .setDescription("[ClickHere](https://discordapp.com/oauth2/authorize?client_id=438160518293880832&permissions=268681270&scope=bot) To Invite TaMoToJi `BOT`")
 
