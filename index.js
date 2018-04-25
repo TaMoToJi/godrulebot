@@ -186,7 +186,6 @@ bot.on("message", async message => {
     let botembed = new Discord.RichEmbed()
     .setAuthor("TaMoToJi's Help Commands", "https://cdn.discordapp.com/avatars/438160518293880832/0301fdd6dffcaf6751d33a809a32941d.png?size=2048")
     .setColor("#5ba0ed")
-    .setThumbnail(bicon)
     .addBlankField(true)
     .setDescription("[Click Here](https://tamotoji533.wixsite.com/healong) View To Website :globe_with_meridians:")
     .setImage("https://cdn.discordapp.com/attachments/364284401497931786/438679892721139712/BotCommand.JPG")
