@@ -34,7 +34,7 @@ bot.on("message", async message => {
 }
 
  if(cmd === `${prefix}ping`){
- message.channel.send(new Date().getTime() - message.createdTimestamp + " ms");
+ message.channel.send(`:satellite:${Math.round(client.ping)}ms`);
 
 }
 
@@ -84,13 +84,9 @@ bot.on("message", async message => {
     .addField("Time", message.createdAt)
     .addField("Reason", kReason);
 
-    let kickChannel = message.guild.channels.find(`name`, "tamotoji-consoloe");
-    if(!kickChannel) return message.channel.send("Can't find incidents channel.");
 
     message.guild.member(kUser).kick(kReason);
-    kickChannel.send(kickEmbed);
-
-    return;
+    return message.channel.send(botembed);
   }  
 
  if(cmd === `${prefix}serverinfo`){
@@ -159,6 +155,31 @@ bot.on("message", async message => {
 
     return message.channel.send(botembed);
   }
+
+  if(cmd === `${prefix}ban`){
+
+    let bUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+    if(!bUser) return message.channel.send("Can't find user!");
+    let bReason = args.join(" ").slice(22);
+    if(!message.member.hasPermission("MANAGE_MEMBERS")) return message.channel.send("No can do pal!");
+    if(bUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("you don't have permissions to use this");
+
+    let banEmbed = new Discord.RichEmbed()
+    .setTitle("~Ban~")
+    .setColor("#FF0000")
+    .addField("Banned User", `${bUser}`)
+    .addField("Banned By", `<@${message.author.id}>`)
+    .addField("Banned In", message.channel)
+    .addField("Time", message.createdAt)
+    .addField("Reason", bReason);
+
+    message.guild.member(bUser).ban(bReason);
+    return message.channel.send(botembed);
+
+
+    return;
+  }
+
 
 });
 
