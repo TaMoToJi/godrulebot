@@ -164,8 +164,6 @@ bot.on("message", async message => {
   }
 
   if(cmd === `${prefix}avatar`){
-
-    let bicon = bot.user.displayAvatarURL;
     let botembed = new Discord.RichEmbed()
     .setColor(`#da89fe`)
     .setTitle(`Avatar`)
