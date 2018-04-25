@@ -177,7 +177,6 @@ bot.on("message", async message => {
     .setDescription("**>>LINKS**")   
     .setDescription(":discordred:[**ClickHere**](https://discordapp.com/oauth2/authorize?client_id=438160518293880832&permissions=268681270&scope=bot) To Invite TaMoToJi `BOT`")
     .setDescription("[ClickHere](https://discordapp.com/oauth2/authorize?client_id=438160518293880832&permissions=268681270&scope=bot) To Invite TaMoToJi `BOT`")
-
     .setFooter("Power By TaMoToJi", "https://cdn.discordapp.com/avatars/438160518293880832/0301fdd6dffcaf6751d33a809a32941d.png?size=2048")
 
     return message.channel.send(botembed);
