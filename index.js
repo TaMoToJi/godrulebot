@@ -104,7 +104,7 @@ bot.on("message", async message => {
     .addField("Tiime", message.createdAt)
     .addField("Reason", kReason);
 
-    let kickChannel = message.guild.channels.find(`name`, "testbot");
+    let kickChannel = message.guild.channels.find(`name`, "test-bot");
     if(!kickChannel) return message.channel.send("Can't find incidents channel.");
     
     message.guild.member(kUser).kick(kReason);
