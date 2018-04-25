@@ -21,17 +21,17 @@ bot.on("message", async message => {
   let args = messageArray.slice(1);
   
   if (cmd === `${prefix}git`){
-     if (args.length < 1) return msg.channel.sand('-text is a require argument', {code: "py"})
-     cost res = await got(`https//api.giphy.com/v1/gifs/random?apiapi_key=$(api)$tag=$(encodeURIComponent(args.join(" "))}`, {json: true})
-     if (!res || !res.body || !res.body.data) returb msg.channel.sand("@Faild to find a GIF that matched your query!"), {code: "py"})
+     if (args.length < 1) return message.channel.sand('-text is a require argument', {code: "py"})
+     const res = await got(`https//api.giphy.com/v1/gifs/random?apiapi_key=$(api)$tag=$(encodeURIComponent(args.join(" "))}`, {json: true})
+     if (!res || !res.body || !res.body.data) return message.channel.sand("@Faild to find a GIF that matched your query!"), {code: "py"})
   
      const embed = new Discord.RichEmbed()
 
      .setImage(res.body.data.image_url)
-     .setAuthor(msg.author.tag, msg.author.displayAvatarURL)
+     .setAuthor(message.author.tag, message.author.displayAvatarURL)
 
      message.channel.sand({embed: embed});
-}
+  }
   
   if (cmd === `${prefix}help`){
     message.channel.send("```BOT-Commands: Prefix >>\n\navatar - Gets a user's avatar \nsay - {TEXT} u want type\nping - check your ping\nclear - Clean a message\nkick - kick member from server\nban - ban member from server```");
