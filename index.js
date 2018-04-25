@@ -7,7 +7,7 @@ const api = "dc6zaTOxFJmzC";
 bot.on("ready", async () => {
   console.log(`${bot.user.username} is online!`);
 
-  bot.user.setActivity("in guild 21", {type: "WATCHING"});
+  bot.user.setActivity("in guild 21", {type: "BC"});
 });
 
 bot.on("message", async message => {
@@ -23,7 +23,6 @@ bot.on("message", async message => {
   if (cmd === `${prefix}git`){
      if (args.length < 1) return message.channel.sand('-text is a require argument', {code: "py"})
      const res = await got(`https//api.giphy.com/v1/gifs/random?apiapi_key=$(api)$tag=$(encodeURIComponent(args.join(" "))}`, {json: true})
-     if (!res || !res.body || !res.body.data) return message.channel.sand("@Faild to find a GIF that matched your query!"), {code: "py"})
   
      const embed = new Discord.RichEmbed()
 
