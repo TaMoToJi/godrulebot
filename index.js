@@ -166,6 +166,20 @@ bot.on("message", async message => {
     return;
   }
 
+  if(cmd === `${prefix}invite`){
+
+    let bicon = bot.user.displayAvatarURL;
+    let botembed = new Discord.RichEmbed()
+    .setTitle("Invite TaMOToJi-BOT To Your Server :")
+    .setDesc("[ClickHere](https://discordapp.com/oauth2/authorize?client_id=438160518293880832&permissions=268681270&scope=bot)")
+    .setColor("#ae67fc")
+    .setThumbnail(bicon)
+    .setFooter(`https://cdn.discordapp.com/attachments/430635274876354561/438647600955129857/avatar.png`)
+    .setFooter(`Power By TaMoToJi`)
+
+    return message.channel.send(botembed);
+  }
+
 
 });
 
