@@ -35,7 +35,7 @@ bot.on("message", async message => {
 }
 
  if(cmd === `${prefix}ping`){
- message.channel.send(new Date().getTime() - message.createdTimestamp + " ms");
+ message.channel.send(new Date().getTime() - message.createdTimestamp + " ms :satellite: ");
 
 }
 
