@@ -19,12 +19,6 @@ bot.on("message", async message => {
   let args = messageArray.slice(1);
   
 
-  if (cmd === `${prefix}help`){
-    message.channel.send("```BOT-Commands: Prefix >>\n\navatar - Gets a user's avatar \nsay - {TEXT} u want type\nping - check your ping\nclear - Clean a message\nkick - kick member from server\nban - ban member from server```");
-    message.delete();
-    message.channel.send(text);
-  }
-
 
   if(cmd === `${prefix}say`){
    if(!message.member.roles.some(r=>["OWNER", "ADMIN"].includes(r.name)) )
@@ -172,7 +166,7 @@ bot.on("message", async message => {
 
     let bicon = bot.user.displayAvatarURL;
     let botembed = new Discord.RichEmbed()
-    .setAuthor("TaMoToJi's Help Commands", "https://cdn.discordapp.com/avatars/438160518293880832/0301fdd6dffcaf6751d33a809a32941d.png?size=2048")
+    .setAuthor("TaMoToJi's Website", "https://cdn.discordapp.com/avatars/438160518293880832/0301fdd6dffcaf6751d33a809a32941d.png?size=2048")
     .setColor("#ae67fc")
     .setTitle("Hello  !I’m TaMoToJi\nStandard Command List\n140+ commands , Music , Fun, Image , Moderation , General command , Use 24/7\nAll in one , All in TaMoToJo   \niUse #help [command] to get more info on a seacific command ")
     .setThumbnail(bicon)
@@ -181,6 +175,22 @@ bot.on("message", async message => {
     .setImage("https://cdn.discordapp.com/attachments/364284401497931786/438579603465043975/Screenshot_2018-04-25-12-58-16.png")
     .setFooter("Powered By TaMoToJi", "https://cdn.discordapp.com/avatars/438160518293880832/0301fdd6dffcaf6751d33a809a32941d.png?size=2048")
     .addBlankField(true)
+
+    return message.channel.send(botembed);
+
+  }
+
+  if(cmd === `${prefix}help`){
+
+    let bicon = bot.user.displayAvatarURL;
+    let botembed = new Discord.RichEmbed()
+    .setAuthor("TaMoToJi's Help Commands", "https://cdn.discordapp.com/avatars/438160518293880832/0301fdd6dffcaf6751d33a809a32941d.png?size=2048")
+    .setColor("#5ba0ed")
+    .setThumbnail(bicon)
+    .addBlankField(true)
+    .setDescription("[Click Here](https://tamotoji533.wixsite.com/healong) View To Website :globe_with_meridians:")
+    .setImage("https://cdn.discordapp.com/attachments/364284401497931786/438679892721139712/BotCommand.JPG")
+    .setFooter("Powered By TaMoToJi", "https://cdn.discordapp.com/avatars/438160518293880832/0301fdd6dffcaf6751d33a809a32941d.png?size=2048")
 
     return message.channel.send(botembed);
 
