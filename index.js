@@ -38,21 +38,6 @@ bot.on("message", async message => {
 
 }
 
- if(cmd === `${prefix}qwe`){
-    if(!message.member.roles.some(r=>["OWNER", "ADMIN"].includes(r.name)) )
-      return message.reply("Sorry, you don't have permissions to use this!");
-    let member = message.mentions.members.first() || message.guild.members.get(args[0]);
-    if(!member)
-      return message.reply("Please Mention a valid member of this server");
-    if(!member.kickable) 
-      return message.reply("I cannot kick this user! Do they have a higher role? Do I have kick permissions?");
-    let reason = args.slice(1).join(' ');
-    if(!reason) reason = "𝐍𝐨 𝐑𝐞𝐚𝐬𝐨𝐧";
-    await member.kick(reason)
-      .catch(error => message.reply(`Sorry ${message.author} I couldn't kick because of : ${error}`));
-    message.reply(`𝐇𝐚𝐬 𝐁𝐞𝐞𝐧 𝐊𝐢𝐜𝐤 ${member.user.tag} 𝐅𝐫𝐨𝐦 𝐒𝐞𝐫𝐯𝐞𝐫 𝐑𝐞𝐚𝐬𝐨𝐧:${reason}`);
-
-  }
 
  if(cmd === `${prefix}clear`){
     const deleteCount = parseInt(args[0], 10);
@@ -164,16 +149,15 @@ bot.on("message", async message => {
   }
 
   if(cmd === `${prefix}avatar`){
+
+    let bicon = bot.user.displayAvatarURL;
     let botembed = new Discord.RichEmbed()
-    .setColor(`#da89fe`)
-    .setTitle(`Avatar`)
-    .setImage(message.author.avatarURL)
-    .setFooter(`Power By TaMoToJi`)
+    .setTitle("User Avatar")
+    .setColor("#ae67fc")
+    .setThumbnail(bicon)
 
-    return message.channel.sendEmbed(embed);
-
+    return message.channel.send(botembed);
   }
-
 
 });
 
