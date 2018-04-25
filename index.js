@@ -172,7 +172,7 @@ bot.on("message", async message => {
     let botembed = new Discord.RichEmbed()
     .setColor("#ae67fc")
     .setTitle("Invite TaMOToJi-BOT To Your Server :")
-    .setDesc("[ClickHere](https://discordapp.com/oauth2/authorize?client_id=438160518293880832&permissions=268681270&scope=bot)")
+    .setDesc("ClickHerehttps://discordapp.com/oauth2/authorize?client_id=438160518293880832&permissions=268681270&scope=bot")
     .setFooter("Power By TaMoToJi")
 
     return message.channel.send(botembed);
