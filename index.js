@@ -171,10 +171,10 @@ bot.on("message", async message => {
 
     let bicon = bot.user.displayAvatarURL;
     let botembed = new Discord.RichEmbed()
-    .setAuthor("TaMoToJi's Help Commands", "https://imgur.com/a/OjIe4k7")
+    .setAuthor("TaMoToJi's Help Commands", "https://cdn.discordapp.com/avatars/438160518293880832/0301fdd6dffcaf6751d33a809a32941d.png?size=2048")
     .setColor("#ae67fc")
     .setTitle("Hello!I’m TamotoJi\nStandard Command List\n140+ commands, Music, Fun, Image, Moderation, General command, Use24/7\nAll in one,All in TamotoJiUse >>help [command] to get more info on a seacific command ")
-    .setDescription("[ClickHere](https://discordapp.com/oauth2/authorize?client_id=438160518293880832&permissions=268681270&scope=bot)")
+    .setDescription("[ClickHere](https://discordapp.com/oauth2/authorize?client_id=438160518293880832&permissions=268681270&scope=bot) To Invite TaMoToJi `BOT`")
     .setFooter("Power By TaMoToJi")
 
     return message.channel.send(botembed);
