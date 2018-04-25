@@ -90,14 +90,14 @@ bot.on("message", async message => {
     //!kick @daeshan askin for it
 
     let kUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-    if(!kUser) return message.channel.send("Can't find user!");
+    if(!kUser) return message.channel.send("```md\n# Please mention one user in order to kick them!\n- kick [@user] [reason]");
     let kReason = args.join(" ").slice(22);
     if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("No can do pal!");
     if(kUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("That person can't be kicked!");
 
     let kickEmbed = new Discord.RichEmbed()
-    .setDescription("~Kick~")
-    .setColor("#eb6cfa")
+    .setImage(message.author.avatarURL)
+    .setColor("#635b0c")
     .addField("Kicked User", `${kUser}`)
     .addField("Kicked By", `<@${message.author.id}>`)
     .addField("Kicked In", message.channel)
@@ -112,6 +112,21 @@ bot.on("message", async message => {
 
     return;
   }  
+
+ if(cmd === `${prefix}serverinfo`){
+
+    let sicon = message.guild.iconURL;
+    let serverembed = new Discord.RichEmbed()
+    .setDescription("Server Information")
+    .setColor("#f58be1")
+    .setThumbnail(sicon)
+    .addField("Server Name", message.guild.name)
+    .addField("Created On", message.guild.createdAt)
+    .addField("You Joined", message.member.joinedAt)
+    .addField("Total Members", message.guild.memberCount);
+
+    return message.channel.send(serverembed);
+  } 
 
 });
 
