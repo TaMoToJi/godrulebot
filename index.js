@@ -98,14 +98,12 @@ bot.on("message", async message => {
     let kickEmbed = new Discord.RichEmbed()
     .setTitle("TaMoToJi-Kick-Console")
     .setColor("#ff0000")
-    .addField("Kicked User :", `${kUser} with ID ${kUser.id}`)
-    .addField("Kicked By: ", `<@${message.author.id}> with ID ${message.author.id}`)
+    .setThumbnail(message.author.avatarURL);
+    .addField("Kicked User :", `${kUser}`)
+    .addField("Kicked By: ", `<@${message.author.id}>`)
     .addField("Kicked In: ", message.channel)
     .addField("Time :", message.createdAt)
     .addField("Reason :", kReason);
-
-    let kickChannel = message.guild.channels.find(`name`, "tamotoji-consoloe");
-    if(!kickChannel) return message.channel.send("Can't find tamotoji-consoloe channel.");
     
     message.guild.member(kUser).kick(kReason);
     kickChannel.send(kickEmbed);
