@@ -83,6 +83,7 @@ bot.on("message", async message => {
       .catch(error => message.reply(`Sorry ${message.author} I couldn't ban because of : ${error}`));
     message.reply(`𝐇𝐚𝐬 𝐁𝐞𝐞𝐧 𝐁𝐚𝐧 ${member.user.tag} 𝐅𝐫𝐨𝐦 𝐒𝐞𝐫𝐯𝐞𝐫 𝐑𝐞𝐚𝐬𝐨𝐧:${reason}`);
   }
+
 });
 
 bot.login(process.env.token);
