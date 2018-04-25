@@ -103,7 +103,7 @@ bot.on("message", async message => {
     //!report @ned this is the reason
 
     let rUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
-    if(!rUser) return message.channel.send("```md\n# Please mention one user in order to kick them!\n- ban [@user] [reason]```");
+    if(!rUser) return message.channel.send("```md\n# Please mention one user in order to report them!\n- report [@user] [reason]```");
     let rreason = args.join(" ").slice(22);
 
     let reportEmbed = new Discord.RichEmbed()
