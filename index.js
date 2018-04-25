@@ -24,18 +24,6 @@ bot.on("message", async message => {
     message.channel.send(text);
   }
 
-  if(cmd === `${prefix}avatar`){
-
-    let bicon = bot.user.displayAvatarURL;
-    let botembed = new Discord.RichEmbed()
-    .setColor(`#da89fe`)
-    .setTitle(`Avatar`)
-    .setImage(message.author.avatarURL)
-    .setFooter(`Power By TaMoToJi`)
-
-    return message.channel.send(serverembed);
-
-  }
 
   if(cmd === `${prefix}say`){
    if(!message.member.roles.some(r=>["OWNER", "ADMIN"].includes(r.name)) )
@@ -174,6 +162,20 @@ bot.on("message", async message => {
 
     return;
   }
+
+  if(cmd === `${prefix}avatar`){
+
+    let bicon = bot.user.displayAvatarURL;
+    let botembed = new Discord.RichEmbed()
+    .setColor(`#da89fe`)
+    .setTitle(`Avatar`)
+    .setImage(message.author.avatarURL)
+    .setFooter(`Power By TaMoToJi`)
+
+    return message.channel.sendEmbed(embed);
+
+  }
+
 
 });
 
