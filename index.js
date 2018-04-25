@@ -172,7 +172,6 @@ bot.on("message", async message => {
     .setThumbnail(bicon)
     .addBlankField(true)
     .setDescription("[Click Here](https://tamotoji533.wixsite.com/healong) View To Website :globe_with_meridians:")
-    .setImage("https://cdn.discordapp.com/attachments/364284401497931786/438579603465043975/Screenshot_2018-04-25-12-58-16.png")
     .setFooter("Powered By TaMoToJi", "https://cdn.discordapp.com/avatars/438160518293880832/0301fdd6dffcaf6751d33a809a32941d.png?size=2048")
     .addBlankField(true)
 
@@ -188,7 +187,7 @@ bot.on("message", async message => {
     .setColor("#5ba0ed")
     .addBlankField(true)
     .setDescription("[Click Here](https://tamotoji533.wixsite.com/healong) View To Website :globe_with_meridians:")
-    .setImage("https://cdn.discordapp.com/attachments/364284401497931786/438679892721139712/BotCommand.JPG")
+    .setImage("https://cdn.discordapp.com/attachments/438339455141543936/438682012232974367/BotCommand.JPG")
     .setFooter("Powered By TaMoToJi", "https://cdn.discordapp.com/avatars/438160518293880832/0301fdd6dffcaf6751d33a809a32941d.png?size=2048")
 
     return message.channel.send(botembed);
