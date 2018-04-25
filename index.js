@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const bot = new Discord.Client({disableEveryone: true});
-cost got = require(`got`);
-cost api = "dc6zaTOxFJmzC";
+const got = require(`got`);
+const api = "dc6zaTOxFJmzC";
 
 
 bot.on("ready", async () => {
