@@ -1,8 +1,5 @@
 const Discord = require("discord.js");
 const bot = new Discord.Client({disableEveryone: true});
-const got = require(`got`);
-const api = "dc6zaTOxFJmzC";
-
 
 bot.on("ready", async () => {
   console.log(`${bot.user.username} is online!`);
@@ -20,18 +17,7 @@ bot.on("message", async message => {
   let cmd = messageArray[0];
   let args = messageArray.slice(1);
   
-  if (cmd === `${prefix}git`){
-     if (args.length < 1) return message.channel.sand('-text is a require argument', {code: "py"})
-     const res = await got(`https//api.giphy.com/v1/gifs/random?apiapi_key=$(api)$tag=$(encodeURIComponent(args.join(" "))}`, {json: true})
-  
-     const embed = new Discord.RichEmbed()
 
-     .setImage(res.body.data.image_url)
-     .setAuthor(message.author.tag, message.author.displayAvatarURL)
-
-     message.channel.sand({embed: embed});
-  }
-  
   if (cmd === `${prefix}help`){
     message.channel.send("```BOT-Commands: Prefix >>\n\navatar - Gets a user's avatar \nsay - {TEXT} u want type\nping - check your ping\nclear - Clean a message\nkick - kick member from server\nban - ban member from server```");
     message.delete();
