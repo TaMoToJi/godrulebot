@@ -1,6 +1,19 @@
 const Discord = require("discord.js");
 const bot = new Discord.Client({disableEveryone: true});
 
+
+client.on("guildMemberAdd", (member) => {
+  const guild = member.guild;
+  if (!newUsers[guild.id]) newUsers[guild.id] = new Discord.Collection();
+  newUsers[guild.id].set(member.id, member.user);
+
+  if (newUsers[guild.id].size > 10) {
+    const userlist = newUsers[guild.id].map(u => u.toString()).join(" ");
+    guild.channels.get(guild.id).send("Welcome our new users!\n" + userlist);
+    newUsers[guild.id].clear();
+  }
+
+
 bot.on("ready", async () => {
   console.log(`${bot.user.username} is online!`);
 
@@ -171,8 +184,8 @@ bot.on("message", async message => {
     let bicon = bot.user.displayAvatarURL;
     let botembed = new Discord.RichEmbed()
     .setColor("#ae67fc")
-    .setTitle("Invite TaMOToJi-BOT To Your Server :")
-    .setDescription("ClickHerehttps://discordapp.com/oauth2/authorize?client_id=438160518293880832&permissions=268681270&scope=bot")
+    .setTitle("TaMOToJi-BOT :")
+    .setDescription("[ClickHere](https://discordapp.com/oauth2/authorize?client_id=438160518293880832&permissions=268681270&scope=bot)")
     .setFooter("Power By TaMoToJi")
 
     return message.channel.send(botembed);
