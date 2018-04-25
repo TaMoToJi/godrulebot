@@ -4,7 +4,7 @@ const bot = new Discord.Client({disableEveryone: true});
 bot.on("ready", async () => {
   console.log(`${bot.user.username} is online!`);
 
-  bot.user.setActivity("type #help", {type: "Watching"});
+  bot.user.setActivity("Type #help ✔", {type: "Watching"});
 });
 
 bot.on("message", async message => {
