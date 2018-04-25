@@ -174,7 +174,7 @@ bot.on("message", async message => {
     let botembed = new Discord.RichEmbed()
     .setAuthor("TaMoToJi's Help Commands", "https://cdn.discordapp.com/avatars/438160518293880832/0301fdd6dffcaf6751d33a809a32941d.png?size=2048")
     .setColor("#ae67fc")
-    .setTitle("Hello  !I’m TaMoToJi\nStandard Command List\n140+ commands , Music , Fun, Image , Moderation , General command , Use24/7\nAll in one , All in TaMoToJo   \niUse #help [command] to get more info on a seacific command ")
+    .setTitle("Hello  !I’m TaMoToJi\nStandard Command List\n140+ commands , Music , Fun, Image , Moderation , General command , Use 24/7\nAll in one , All in TaMoToJo   \niUse #help [command] to get more info on a seacific command ")
     .setThumbnail(bicon)
     .setDescription("[Click Here](https://tamotoji533.wixsite.com/healong) View To Website :globe_with_meridians:")
     .setFooter("Powered By TaMoToJi", "https://cdn.discordapp.com/avatars/438160518293880832/0301fdd6dffcaf6751d33a809a32941d.png?size=2048")
