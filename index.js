@@ -96,6 +96,7 @@ bot.on("message", async message => {
     if(kUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("That person can't be kicked!");
 
     let kickEmbed = new Discord.RichEmbed()
+    .setThumbnail(message.author.avatarURL)
     .setDescription("~Kick~")
     .setColor("#F781F3")
     .addField("Kicked User", `${kUser}`)
