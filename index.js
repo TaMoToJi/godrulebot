@@ -59,7 +59,7 @@ bot.on("message", async message => {
     let kUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     if(!kUser) return message.channel.send("```md\n# Please mention one user in order to kick them!\n- kick [@user] [reason]```");
     let kReason = args.join(" ").slice(22);
-    if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("No can do pal!");
+    if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("You Need To [KICK MEMBER] Permissions!");
     if(kUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("That person can't be kicked!");
 
     let kickEmbed = new Discord.RichEmbed()
@@ -80,7 +80,7 @@ bot.on("message", async message => {
 
     let sicon = message.guild.iconURL;
     let serverembed = new Discord.RichEmbed()
-    .setDescription("Server Information")
+    .setDescription("Server Info")
     .setColor("#f58be1")
     .setThumbnail(sicon)
     .addField("Server Name", message.guild.name)
@@ -140,6 +140,8 @@ bot.on("message", async message => {
     .setFooter(`Powered By TaMoToJi`)
 
     return message.channel.send(botembed);
+    message.delete();
+    message.channel.send(text);
   }
 
   if(cmd === `${prefix}ban`){
@@ -147,7 +149,7 @@ bot.on("message", async message => {
     let bUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     if(!bUser) return message.channel.send("```md\n# Please mention one user in order to kick them!\n- ban [@user] [reason]```");
     let bReason = args.join(" ").slice(22);
-    if(!message.member.hasPermission("MANAGE_MEMBERS")) return message.channel.send("No can do pal!");
+    if(!message.member.hasPermission("MANAGE_MEMBERS")) return message.channel.send("You Need To [BAN MEMBER] Permissions");
     if(bUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("you don't have permissions to use this");
 
     let banEmbed = new Discord.RichEmbed()
@@ -176,7 +178,7 @@ bot.on("message", async message => {
     .setDescription("")
     .setDescription("**>>LINKS**")   
     .setDescription("⇛[**𝐈𝐧𝐯𝐢𝐭𝐞**](https://discordapp.com/oauth2/authorize?client_id=438160518293880832&permissions=268681270&scope=bot) To Invite TaMoToJi `BOT`")
-    .setDescription("⇛[**𝐖𝐞𝐛𝐬𝐢𝐭𝐞**](https://discordapp.com/oauth2/authorize?client_id=438160518293880832&permissions=268681270&scope=bot) To Invite TaMoToJi `BOT`")
+    .setDescription("⇛[**𝐖𝐞𝐛𝐬𝐢𝐭𝐞**](https://tamotoji533.wixsite.com/healong")
     .setFooter("Powered By TaMoToJi", "https://cdn.discordapp.com/avatars/438160518293880832/0301fdd6dffcaf6751d33a809a32941d.png?size=2048")
 
     return message.channel.send(botembed);
