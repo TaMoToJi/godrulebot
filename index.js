@@ -2,23 +2,15 @@ const Discord = require("discord.js");
 const bot = new Discord.Client({disableEveryone: true});
 
 
-bot.on("guildMemberAdd", (member) => {
-  const guild = member.guild;
-  if (!newUsers[guild.id]) newUsers[guild.id] = new Discord.Collection();
-  newUsers[guild.id].set(member.id, member.user);
-
-  if (newUsers[guild.id].size > 10) {
-    const userlist = newUsers[guild.id].map(u => u.toString()).join(" ");
-    guild.channels.get(guild.id).send("Welcome our new users!\n" + userlist);
-    newUsers[guild.id].clear();
-  }
-
-
 bot.on("ready", async () => {
   console.log(`${bot.user.username} is online!`);
 
   bot.user.setActivity("Type #help ✔", {type: "Watching"});
 });
+
+bot.on("guildMemberAdd", member => {
+    let mem = member.guild
+    mem.defaultChannel.sendMessage(member.user + " welcome to the server!"); });
 
 bot.on("message", async message => {
 
