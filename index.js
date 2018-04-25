@@ -175,8 +175,7 @@ bot.on("message", async message => {
     .setAuthor("TaMoToJi's Help Commands", "https://cdn.discordapp.com/avatars/438160518293880832/0301fdd6dffcaf6751d33a809a32941d.png?size=2048")
     .setColor("#ae67fc")
     .satTitle("Hello!I’m TamotoJi\nStandard Command List\n140+ commands, Music, Fun, Image, Moderation, General command, Use24/7\nAll in one,All in TamotoJ   \niUse #help [command] to get more info on a seacific command ")
-    .addField("[𝐈𝐧𝐯𝐢𝐭𝐞](https://discordapp.com/oauth2/authorize?client_id=438160518293880832&permissions=268681270&scope=bot) To Invite TaMoToJi `BOT`", "They can also be inline.", true)
-    .setDescription("[𝐖𝐞𝐛𝐬𝐢𝐭𝐞](https://tamotoji533.wixsite.com/healong)")
+    .setDescription("[Click Here](https://tamotoji533.wixsite.com/healong) View To Website !")
     .setFooter("Powered By TaMoToJi", "https://cdn.discordapp.com/avatars/438160518293880832/0301fdd6dffcaf6751d33a809a32941d.png?size=2048")
 
     return message.channel.send(botembed);
