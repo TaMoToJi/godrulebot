@@ -99,7 +99,7 @@ bot.on("message", async message => {
     .setTitle("TaMoToJi-Kick-Console")
     .setColor("#ff0000")
     .setThumbnail(message.author.avatarURL);
-    .addField("Kicked User :", `${kUser}`)
+    .addField("Banned User", `${bUser} with ID ${bUser.id}`)
     .addField("Kicked By: ", `<@${message.author.id}>`)
     .addField("Kicked In: ", message.channel)
     .addField("Time :", message.createdAt)
