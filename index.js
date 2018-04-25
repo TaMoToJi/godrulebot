@@ -135,7 +135,7 @@ bot.on("message", async message => {
 
     let bicon = bot.user.displayAvatarURL;
     let botembed = new Discord.RichEmbed()
-    .setTitle(message.author.avatarURL)
+    .setImage(message.author.avatarURL)
     .setColor("#ae67fc")
     .setFooter(`Powered By TaMoToJi`)
 
