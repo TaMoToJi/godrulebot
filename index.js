@@ -154,7 +154,7 @@ bot.on("message", async message => {
     let botembed = new Discord.RichEmbed()
     .setTitle("User Avatar")
     .setColor("#ae67fc")
-    .setThumbnail(bicon)
+    .setImage(bicon)
 
     return message.channel.send(botembed);
   }
