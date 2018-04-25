@@ -8,10 +8,6 @@ bot.on("ready", async () => {
   bot.user.setActivity("Type #help ✔", {type: "Watching"});
 });
 
-bot.on("guildMemberAdd", member => {
-    let mem = member.guild
-    mem.defaultChannel.sendMessage(member.user + " welcome to the server!"); });
-
 bot.on("message", async message => {
 
   if (message.author.bot) return;
