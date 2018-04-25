@@ -96,17 +96,14 @@ bot.on("message", async message => {
     if(kUser.hasPermission("MANAGE_MESSAGES")) return message.channel.send("That person can't be kicked!");
 
     let kickEmbed = new Discord.RichEmbed()
-    .setTitle("TaMoToJi-Kick-Console")
-    .setColor("#ff0000")
-    .setThumbnail(message.author.avatarURL);
-    .addField("Banned User", `${bUser} with ID ${bUser.id}`)
-    .addField("Banned By", `<@${message.author.id}> with ID ${message.author.id}`)
-    .addField("Kicked In: ", message.channel)
-    .addField("Time :", message.createdAt)
-    .addField("Reason :", kReason);
+    .setDescription("~Kick~")
+    .setColor("#F781F3")
+    .addField("Kicked User", `${kUser}`)
+    .addField("Kicked By", `<@${message.author.id}>`)
+    .addField("Kicked In", message.channel)
+    .addField("Tiime", message.createdAt)
+    .addField("Reason", kReason);
     
-    let incidentchannel = message.guild.channels.find(`name`, "incidents");
-    if(!incidentchannel) return message.channel.send("Can't find incidents channel.");
     
     message.guild.member(kUser).kick(kReason);
     kickChannel.send(kickEmbed);
