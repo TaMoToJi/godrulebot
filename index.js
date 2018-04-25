@@ -152,9 +152,10 @@ bot.on("message", async message => {
 
     let bicon = bot.user.displayAvatarURL;
     let botembed = new Discord.RichEmbed()
-    .setTitle("User Avatar")
+    .setTitle("Avatar")
     .setColor("#ae67fc")
     .setImage(bicon)
+    .setFooter(`Power By TaMoToJi`)
 
     return message.channel.send(botembed);
   }
