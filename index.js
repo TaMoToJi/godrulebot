@@ -201,7 +201,11 @@ bot.on("message", async message => {
 
   }
 
-
+  if (cmd == `{$prefix}8ball`){ // creates the command 8ball
+        if (args[1] != null) message.reply(eightball[Math.floor(Math.random() * eightball.length).toString(16)]); // if args[1], post random answer
+        else message.channel.send("Ummmm, what is your question? :rolling_eyes: (Correct usage: *8ball [question])"); // if not, error
+ 
+   }
 
 });
 
