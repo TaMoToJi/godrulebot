@@ -20,13 +20,20 @@ bot.on("message", async message => {
   
 
 
-  if(cmd === `${prefix}say`){
+  if(cmd === `${prefix}asd`){
    if(!message.member.roles.some(r=>["OWNER", "ADMIN"].includes(r.name)) )
       return message.reply("Sorry, you don't have permissions to use this!");
   let text = args.slice(1).join(" ");
   message.delete();
   message.channel.send(text);
 }
+  
+  if(cmd === `${prefix}say`) {
+   if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("You Need To [MANAGE_MESSAGES] Permissions !");
+    const sayMessage = args.join(" ");
+    message.delete().catch(O_o=>{}); 
+    message.channel.send(sayMessage);
+  }
 
  if(cmd === `${prefix}ping`){
  message.channel.send(new Date().getTime() - message.createdTimestamp + " ms :satellite: ");
