@@ -201,12 +201,6 @@ bot.on("message", async message => {
 
   }
 
-  if(cmd === `${prefix}userinfo`){
-	if (!userData[sender]) userData[sender] = {
-		profilStart: false,
-		recharge: 0,
-		luck: undefined,
-	}
 
 
 });
