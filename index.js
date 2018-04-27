@@ -146,8 +146,11 @@ bot.on("message", async message => {
   }
 
   if(cmd === `${prefix}prefix`) {
-   return message.reply("Prefix : TaMoToJi is '#'");
-   message.delete();
+   let prefixembed = new Discord.RichEmbed()
+   .setDesc("Prefix is [ # ]")
+   .setColor('RANDOM')
+
+   
 
   }
 
