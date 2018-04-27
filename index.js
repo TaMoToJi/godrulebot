@@ -18,14 +18,18 @@ bot.on("message", async message => {
   let cmd = messageArray[0];
   let args = messageArray.slice(1);
   
+  if(cmd === `${prefix}`) {
+   return message.author.sand('Prefix : ${bot.user.username} is ${prefix}');
 
+}
 
-  if(cmd === `${prefix}asd`){
+  if(cmd === `${prefix}asd`) {
    if(!message.member.roles.some(r=>["OWNER", "ADMIN"].includes(r.name)) )
       return message.reply("Sorry, you don't have permissions to use this!");
   let text = args.slice(1).join(" ");
   message.delete();
   message.channel.send(text);
+
 }
   
   if(cmd === `${prefix}say`) {
