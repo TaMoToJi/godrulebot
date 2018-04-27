@@ -18,10 +18,6 @@ bot.on("message", async message => {
   let cmd = messageArray[0];
   let args = messageArray.slice(1);
   
-  if(cmd === `${prefix}prefix`) {
-   return message.reply('Prefix : ${bot.user.username} is ${prefix}');
-
-}
 
   if(cmd === `${prefix}asd`) {
    if(!message.member.roles.some(r=>["OWNER", "ADMIN"].includes(r.name)) )
@@ -148,6 +144,12 @@ bot.on("message", async message => {
     message.delete();
     message.channel.send(text);
   }
+
+  if(cmd === `${prefix}prefix`) {
+   return message.author.sand('Prefix : ${bot.user.username} is ${prefix}');
+
+  }
+
 
   if(cmd === `${prefix}ban`){
 
