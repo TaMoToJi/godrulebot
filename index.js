@@ -18,7 +18,7 @@ bot.on("message", async message => {
   let cmd = messageArray[0];
   let args = messageArray.slice(1);
   
-  if(cmd === `${prefix}`) {
+  if(cmd === `${prefix}prefix`) {
    return message.author.sand('Prefix : ${bot.user.username} is ${prefix}');
 
 }
