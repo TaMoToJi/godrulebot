@@ -246,7 +246,7 @@ bot.on("message", async message => {
     .addField('Reason:', reason)
     .setFooter(toMute.user.tag + " was tempmuted")
     modlog.send(embed)
-    toMute.roles.add(muteRole.id);
+    toMute.addRole(muteRole);
 
     return message.channel.send(embed);
 
