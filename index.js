@@ -1,6 +1,5 @@
 const Discord = require("discord.js");
 const bot = new Discord.Client({disableEveryone: false});
-const Fortnite = new Fortnite(process.env.TRN);
 
 
 bot.on("ready", async () => {
