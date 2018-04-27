@@ -204,7 +204,7 @@ bot.on("message", async message => {
     .setAuthor("TaMoToJi :", message.author.avatarURL)
     .setDescription(args.join(" "),true)
     .setColor('RANDOM')
-    .addDescription(args.join(" "))
+    .setDescription(args.join(" "))
 
     message.delete().catch(O_o=>{});
     return message.channel.send(embed1);
