@@ -178,7 +178,8 @@ bot.on("message", async message => {
     .setTitle("Hello  !I’m TaMoToJi\nStandard Command List\n140+ commands , Music , Fun, Image , Moderation , General command , Use 24/7\nAll in one , All in TaMoToJo   \niUse #help [command] to get more info on a seacific command ")
     .setThumbnail(bicon)
     .addBlankField(true)
-    .setDescription("[Click Here](https://tamotoji533.wixsite.com/healong) View To Website :globe_with_meridians:")
+    .addField("KhmerEMpire", "[Click Here](https://tamotoji533.wixsite.com/healong) View To Website :globe_with_meridians)")
+    .addField("TaMoToJi", "[Click Here](https://discordapp.com/api/oauth2/authorize?client_id=438160518293880832&permissions=2042801335&scope=bot)")
     .setFooter("Powered By TaMoToJi", "https://cdn.discordapp.com/avatars/438160518293880832/0301fdd6dffcaf6751d33a809a32941d.png?size=2048")
     .addBlankField(true)
 
