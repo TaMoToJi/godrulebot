@@ -37,7 +37,7 @@ bot.on("message", async message => {
     .addField(`${bot.user.username} Says...`, replies[result])
     .addField("Cool..", thatittxt);
 
-    return message.channel.send(8ballembed);
+    return message.channel.send(ballembed);
     console.log();
 
   }
