@@ -19,39 +19,27 @@ bot.on("message", async message => {
   let cmd = messageArray[0];
   let args = messageArray.slice(1);
 
-  if(cmd === `{prefix}fortnite`) {
-    let username = args[0];
-    let platform = args[1] || "pc";
-
-    let data = ft.getInfo(username, platform).then(data => {
-
-        let stats = data.lifetimeStats;
-        let kills = stat.find(s => s.stat == 'kills');
-        let wins = stat.find(s => s.stat == 'wins');
-        let kd = stat.find(s => s.stat == 'kd');
-        let mPlayed = stat.find(s => s.stat == 'matchesPlayed');
-        let tPlayed = stat.find(s => s.stat == 'timePlayed');
-        let asTime = stat.find(s => s.stat == 'avgSurvivalTime');
-
-        let embed = new Discord.RichEmbed()
-        .setTitle("Fortnite Kullanıcı İstatistikleri")
-        .setAuthor(data.username)
-        .setColor("#ffffff")
-        .addField("Öldürme", kills.value, true)
-        .addField("Kazanılan Maçlar", wins.value, true)
-        .addField("KD", kd.value, true)
-        .addField("Oynanılan Oyunlar", mPlayed.value, true)
-        .addField("Oynanılan En Uzun Süre", tPlayed.value, true)
-        .addField("Hayatta Kalma *Zamanı* ", asTime.value, true)
-
-        message.channel.send(embed);
-        
+  if(cmd === `{prefix}8ball`) {
     
-    }).catch(e => {
-        console.log(e);
-        message.channel.send("Hata: Veritabanında Böyle Kullanıcı Bulunamadı");
+    if(!args[1]) return message.reply("Not full Question");
+    let replies = ["Yes","No","Maybe", "I Don't Know"];
 
-    });
+    let thatittxt = `That Was.... Cool ${message.author}`
+
+    let result = Math.floor((Math.random() * replies.lenght));
+    let question = args.slice(0).join(" ");
+
+    let ballembed = new Discord.RichEmbed()
+    .setDescription("8Ball")
+    .setAuthor(message.author.tag)
+    .setColor('RANDOM')
+    .addField("Question", question)
+    .addField(`${bot.user.username} Says...`, replies[result])
+    .addField("Cool..", thatittxt);
+
+    message.author.sand(ballembed);
+
+    return;
 
   }
 
