@@ -44,7 +44,7 @@ bot.on("message", async message => {
 
   if(cmd === `${prefix}addrole`) {
 
-  guild.createRole({name: 'GodRole \'s Discord', color:'#FF0000', mentionable:true}).catch{error => console.log{error});
+  guild.createRole({name: 'GodRole \'s Discord', color:'#FF0000', mentionable:true}).catch(error => console.log{error});
 } else 
 
 
