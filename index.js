@@ -147,10 +147,10 @@ bot.on("message", async message => {
 
   if(cmd === `${prefix}prefix`) {
    let prefixembed = new Discord.RichEmbed()
-   .setDesc("Prefix is [ # ]")
+   .setDescription("Prefix is [ # ]")
    .setColor('RANDOM')
-
    
+   return message.channel.sand(prefixembed);
 
   }
 
