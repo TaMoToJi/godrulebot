@@ -47,7 +47,7 @@ bot.on("message", async message => {
      message.channel.bulkDelete(args[0]).then(() => {
     message.channel.send(`Suc.... ${args[0]} .`).then(msg => msg.delete(2000));
 
- });
+ }
 
  
  if(cmd === `${prefix}kick`){
