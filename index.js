@@ -22,11 +22,11 @@ bot.on("message", async message => {
   if(cmd === `{prefix}ball`){
     
     if(!args[1]) return message.reply("Not full Question");
-    let responses = ["Yes","No","Maybe", "I Don't Know"];
+    let result = ["Yes","No","Maybe", "I Don't Know"];
 
     let thatittxt = `That Was.... Cool ${message.author}`
 
-    result = Math.floor((Math.random() * sayings.length) + 0);
+    let = Math.floor((Math.random() * sayings.length) + 0);
     let question = args.slice(0).join(" ");
 
     let ballembed = new Discord.RichEmbed()
@@ -38,15 +38,6 @@ bot.on("message", async message => {
     .addField("Cool..", thatittxt);
 
     return message.channel.send(ballembed);
-    console.log();
-
-  }
- 
-  if(cmd === "8ball") {
-    if(!args[2]) return message.reply("Please ask full question!");
-    let responses = ["Yes", "No", "I Don't Know", "Ask Again Later"];
-    result = Math.floor((Math.random() * sayings.length) + 0);
-    message.reply(message, say[result]);
     console.log();
 
   }
