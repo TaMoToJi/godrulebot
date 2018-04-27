@@ -42,15 +42,12 @@ bot.on("message", async message => {
 
 
  if(cmd === `${prefix}clear`){
-    const deleteCount = parseInt(args[0], 10);
-    if(!deleteCount || deleteCount < 2 || deleteCount > 100)
-      return message.reply("Please provide a number between 2 and 100 for the number of messages to delete");
-    if(!message.member.roles.some(r=>["OWNER", "ADMIN"].includes(r.name)) )
-      return message.reply("Sorry, you don't have permissions to use this!");
-    const fetched = await message.channel.fetchMessages({count: deleteCount});
-    message.channel.bulkDelete(fetched)
-      .catch(error => message.reply(`Couldn't delete messages because of: ${error}`));
-  }
+     if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("you don't have permssion MANAGE_MESSAGE to use this !");
+     if(!args[0]) return message.channel.send("no");
+     message.channel.bulkDelete(args[0]).then(() => {
+    message.channel.send(`Suc.... ${args[0]} .`).then(msg => msg.delete(2000));
+
+ });
 
  
  if(cmd === `${prefix}kick`){
