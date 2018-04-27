@@ -146,7 +146,8 @@ bot.on("message", async message => {
   }
 
   if(cmd === `${prefix}prefix`) {
-   return message.author.reply("Prefix : ${bot.user.username} is ${prefix}");
+   return message.reply("Prefix : TaMoToJi is '#'");
+   message.delete();
 
   }
 
@@ -208,11 +209,6 @@ bot.on("message", async message => {
 
   }
 
-  if (cmd == `{$prefix}8ball`){ // creates the command 8ball
-      if (args[1] != null) message.reply(eightball[Math.floor(Math.random() * eightball.length).toString(16)]);
-      else message.channel.send("Ummmm, what is your question? :rolling_eyes: (Correct usage: *8ball [question])"); 
- 
-   }
 
 });
 
