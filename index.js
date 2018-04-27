@@ -252,7 +252,7 @@ bot.on("message", async message => {
     .setFooter(toMute.user.tag + " was tempmuted")
     .setTimestamp()
     modlog.send(embed)
-    toMute.roles.add(muteRole.id)
+    toMute.roles.add(muteRole.id);
 
  }
 
