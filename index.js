@@ -237,7 +237,7 @@ bot.on("message", async message => {
     let modlog = message.guild.channels.find('name', "tamotoji-logs")
     if (!modlog) return message.channel.send('Cant find a modlog Channel in my Database for this Guild , Please set one');
 
-    var embed = new Discord.MessageEmbed()
+    var embed = new Discord.RichEmbed()
 
     .setTitle(':AUCTION: Tempmuted | ' + toMute.user.tag)
     .setColor('#A9B5FD')
@@ -247,6 +247,8 @@ bot.on("message", async message => {
     .setFooter(toMute.user.tag + " was tempmuted")
     modlog.send(embed)
     toMute.roles.add(muteRole.id);
+
+    return message.channel.send(embed);
 
  }
 
