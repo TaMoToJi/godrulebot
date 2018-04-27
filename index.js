@@ -5,9 +5,15 @@ const bot = new Discord.Client({disableEveryone: false});
 bot.on("ready", async () => {
   console.log(`${bot.user.username} is online!`);
 
-  bot.user.setActivity(`${bot.user.username} Server`, {type: "Watching"});
+  bot.user.setActivity(`Type #help for help`, {type: "Watching"});
 });
 
+bot.on("roleCreate", role => {
+  let guild = role.guild,
+  let channel = member.guild.channels.find('name', 'welcome-leave');
+  guild.sandMessage('${roles.name} A Role Has Been Create From Server !')
+
+});
 
 bot.on("message", async message => {
 
