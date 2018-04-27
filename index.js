@@ -8,9 +8,9 @@ bot.on("ready", async () => {
   bot.user.setActivity(`Type #help for help`, {type: "Watching"});
 });
 
-bot.generateInvite(['SEND_MESSAGES', 'MANAGE_GUILD', 'MENTION_EVERYONE'])
+bot.generateInvite(['SEND_MESSAGES', 'MANAGE_GUILD', 'MENTION_EVERYONE']);
   .then(link => {
-    console.log(`Generated bot invite link: ${link}`)
+    console.log(`Generated bot invite link: ${link}`);
  });
 
 bot.on("message", async message => {
