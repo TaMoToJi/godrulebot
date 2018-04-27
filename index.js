@@ -232,9 +232,6 @@ bot.on("message", async message => {
     if (!toMute) return message.reply('Please mention a Member first or provide their ClientID.');
     let muteRole = message.guild.roles.find('name', "TempMute");
     if (!muteRole) return message.channel.send(`Cant find a role named`);
-    let time = args[1];
-    if (!time) return message.reply('Please provide a time to mute');
-    time = Date.now() + ms(args[1]);
     let reason = args.slice(2).join(' ');
     if (!reason) reason = 'no reason provided';
     let modlog = message.guild.channels.find('name', "tamotoji-logs")
@@ -246,11 +243,8 @@ bot.on("message", async message => {
     .setColor('#A9B5FD')
     .addField('User:', toMute.user.tag, true)  
     .addField('Moderator:', message.author.tag, true)
-    .addBlankField(true, true)
-    .addField(`Time`, `${ms(ms(args[1]), { long: true })} \`(Until : ${dateformat(time)})\``)
     .addField('Reason:', reason)
     .setFooter(toMute.user.tag + " was tempmuted")
-    .setTimestamp()
     modlog.send(embed)
     toMute.roles.add(muteRole.id);
 
