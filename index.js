@@ -202,9 +202,9 @@ bot.on("message", async message => {
     if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("you don't have permssion MANAGE_MESSAGE to use this !");
     const embed1 = new Discord.RichEmbed()
     .setAuthor("TaMoToJi :", message.author.avatarURL)
-    .setDescription(args.join(" "))
+    .setDescription(args.join(" "),true)
     .setColor('RANDOM')
-    .addField('JUST-TEST', orgArray !== null || orgArray !== '' ? orgArray.join(', ') : 'None!')
+    .addDescription(args.join(" "))
 
     message.delete().catch(O_o=>{});
     return message.channel.send(embed1);
