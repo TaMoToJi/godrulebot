@@ -8,12 +8,10 @@ bot.on("ready", async () => {
   bot.user.setActivity(`Type #help for help`, {type: "Watching"});
 });
 
-bot.on("roleCreate", role => {
-  let guild = role.guild,
-  let channel = member.guild.channels.find('name', 'welcome-leave');
-  guild.sandMessage('${roles.name} A Role Has Been Create From Server !')
-
-});
+bot.generateInvite(['SEND_MESSAGES', 'MANAGE_GUILD', 'MENTION_EVERYONE'])
+  .then(link => {
+    console.log(`Generated bot invite link: ${link}`);
+  });
 
 bot.on("message", async message => {
 
