@@ -45,11 +45,12 @@ bot.on("message", async message => {
      if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("you don't have permssion MANAGE_MESSAGE to use this !");
      if(!args[0]) return message.channel.send("no");
      message.channel.bulkDelete(args[0]).then(() => {
-    message.channel.send(`Suc.... ${args[0]} .`).then(msg => msg.delete(2000));
+    message.channel.send(`message has been clear ${args[0]} .`).then(msg => msg.delete(2000));
+ });
 
- }
+}
 
- 
+
  if(cmd === `${prefix}kick`){
 
     //!kick @daeshan askin for it
