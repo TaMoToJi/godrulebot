@@ -19,7 +19,7 @@ bot.on("message", async message => {
   let cmd = messageArray[0];
   let args = messageArray.slice(1);
 
-  if(cmd === `{prefix}8ball`){
+  if(cmd === `{prefix}ball`){
     
     if(!args[1]) return message.reply("Not full Question");
     let responses = ["Yes","No","Maybe", "I Don't Know"];
@@ -38,6 +38,15 @@ bot.on("message", async message => {
     .addField("Cool..", thatittxt);
 
     return message.channel.send(ballembed);
+    console.log();
+
+  }
+ 
+  if(command === "8ball") {
+    if(!args[2]) return message.reply("Please ask full question!");
+    let responses = ["Yes", "No", "I Don't Know", "Ask Again Later"];
+    result = Math.floor((Math.random() * sayings.length) + 0);
+    message.reply(message, say[result]);
     console.log();
 
   }
