@@ -8,7 +8,6 @@ bot.on("ready", async () => {
   bot.user.setActivity(`Type #help for help`, {type: "Watching"});
 });
 
-
 bot.on("message", async message => {
 
   if (message.author.bot) return;
