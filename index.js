@@ -146,7 +146,7 @@ bot.on("message", async message => {
   }
 
   if(cmd === `${prefix}prefix`) {
-   return message.author.sand('Prefix : ${bot.user.username} is ${prefix}');
+   return message.channel.sand('Prefix : ${bot.user.username} is ${prefix}');
 
   }
 
