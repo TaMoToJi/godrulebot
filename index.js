@@ -5,7 +5,7 @@ const bot = new Discord.Client({disableEveryone: false});
 bot.on("ready", async () => {
   console.log(`${bot.user.username} is online!`);
 
-  bot.user.setActivity(`${bot.guilds.memberCount} Server`, {type: "Watching"});
+  bot.user.setActivity(`${bot.user.username} Server`, {type: "Watching"});
 });
 
 
