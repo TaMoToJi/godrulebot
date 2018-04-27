@@ -225,6 +225,36 @@ bot.on("message", async message => {
     return message.channel.send(botembed);
 
   }
+ 
+  if(cmd === `${prefix}tempmute`){
+
+     let toMute = message.mentions.members.first() || message.guild.member(args[0]);
+    if (!toMute) return message.reply('Please mention a Member first or provide their ClientID.');
+    let muteRole = message.guild.roles.find('name', client.settings.get(message.guild.id).muteRole);
+    if (!muteRole) return message.channel.send(`Cant find a role named \`${client.settings.get(message.guild.id).muteRole}\``);
+    let time = args[1];
+    if (!time) return message.reply('Please provide a time to mute');
+    time = Date.now() + ms(args[1]);
+    let reason = args.slice(2).join(' ');
+    if (!reason) reason = 'no reason provided';
+    let modlog = message.guild.channels.find('name', client.settings.get(message.guild.id).modLog)
+    if (!modlog) return message.channel.send('Cant find a modlog Channel in my Database for this Guild , Please set one');
+
+    var embed = new Discord.MessageEmbed()
+
+    .setTitle(':AUCTION: Tempmuted | ' + toMute.user.tag)
+    .setColor('#A9B5FD')
+    .addField('User:', toMute.user.tag, true)  
+    .addField('Moderator:', message.author.tag, true)
+    .addBlankField(true, true)
+    .addField(`Time`, `${ms(ms(args[1]), { long: true })} \`(Until : ${dateformat(time)})\``)
+    .addField('Reason:', reason)
+    .setFooter(toMute.user.tag + " was tempmuted")
+    .setTimestamp()
+    modlog.send(embed)
+    toMute.roles.add(muteRole.id)
+
+ }
 
 
 });
