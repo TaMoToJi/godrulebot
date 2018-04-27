@@ -22,11 +22,11 @@ bot.on("message", async message => {
   if(cmd === `{prefix}8ball`){
     
     if(!args[1]) return message.reply("Not full Question");
-    let replies = ["Yes","No","Maybe", "I Don't Know"];
+    let responses = ["Yes","No","Maybe", "I Don't Know"];
 
     let thatittxt = `That Was.... Cool ${message.author}`
 
-    let result = Math.floor((Math.random() * replies.lenght));
+    result = Math.floor((Math.random() * sayings.length) + 0);
     let question = args.slice(0).join(" ");
 
     let ballembed = new Discord.RichEmbed()
