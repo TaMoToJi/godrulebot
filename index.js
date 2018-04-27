@@ -42,7 +42,7 @@ bot.on("message", async message => {
 
   }
  
-  if(command === "8ball") {
+  if(cmd === "8ball") {
     if(!args[2]) return message.reply("Please ask full question!");
     let responses = ["Yes", "No", "I Don't Know", "Ask Again Later"];
     result = Math.floor((Math.random() * sayings.length) + 0);
