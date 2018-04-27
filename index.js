@@ -197,6 +197,20 @@ bot.on("message", async message => {
     return message.channel.send(botembed);
 
   }
+  
+  if(cmd === `${prefix}embed`){
+    if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("you don't have permssion MANAGE_MESSAGE to use this !");
+    const embed1 = new Discord.RichEmbed()
+    .setAuthor("TaMoToJi :", message.author.avatarURL)
+    .setDescription(args.join(" "))
+    .setColor('RANDOM')
+
+    message.delete().catch(O_o=>{});
+    return message.channel.send(embed1);
+    
+  }
+ 
+
 
   if(cmd === `${prefix}help`){
 
