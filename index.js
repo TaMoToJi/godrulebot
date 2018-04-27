@@ -42,11 +42,6 @@ bot.on("message", async message => {
 
   }
 
-  if(cmd === `${prefix}addrole`) {
-
-  guild.createRole({name: 'GodRole \'s Discord', color:'#FF0000', mentionable:true}).catch(error => console.log{error});
-} else 
-
 
   if(cmd === `${prefix}asd`) {
    if(!message.member.roles.some(r=>["OWNER", "ADMIN"].includes(r.name)) )
