@@ -10,8 +10,8 @@ bot.on("ready", async () => {
 
 bot.generateInvite(['SEND_MESSAGES', 'MANAGE_GUILD', 'MENTION_EVERYONE'])
   .then(link => {
-    console.log(`Generated bot invite link: ${link}`);
-  });
+    console.log(`Generated bot invite link: ${link}`)
+ });
 
 bot.on("message", async message => {
 
