@@ -19,7 +19,7 @@ bot.on("message", async message => {
   let cmd = messageArray[0];
   let args = messageArray.slice(1);
 
-  if(cmd === `{prefix}8ball`) {
+  if(cmd === `{prefix}8ball`){
     
     if(!args[1]) return message.reply("Not full Question");
     let replies = ["Yes","No","Maybe", "I Don't Know"];
@@ -37,9 +37,8 @@ bot.on("message", async message => {
     .addField(`${bot.user.username} Says...`, replies[result])
     .addField("Cool..", thatittxt);
 
-    message.author.sand(ballembed);
-
-    return;
+    return message.channel.send(8ballembed);
+    console.log();
 
   }
 
