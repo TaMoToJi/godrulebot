@@ -8,6 +8,7 @@ bot.on("ready", async () => {
   bot.user.setActivity("Type #help ✔", {type: "Watching"});
 });
 
+
 bot.on("message", async message => {
 
   if (message.author.bot) return;
@@ -239,7 +240,7 @@ bot.on("message", async message => {
 
     var embed = new Discord.RichEmbed()
 
-    .setTitle(':AUCTION: Tempmuted | ' + toMute.user.tag)
+    .setTitle(':speak_no_evil: : Tempmuted | ' + toMute.user.tag)
     .setColor('#A9B5FD')
     .addField('User:', toMute.user.tag, true)  
     .addField('Moderator:', message.author.tag, true)
