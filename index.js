@@ -8,10 +8,6 @@ bot.on("ready", async () => {
   bot.user.setActivity(`Type #help for help`, {type: "Watching"});
 });
 
-bot.generateInvite(['SEND_MESSAGES', 'MANAGE_GUILD', 'MENTION_EVERYONE']);
-  .then(link => {
-    console.log(`Generated bot invite link: ${link}`);
- });
 
 bot.on("message", async message => {
 
@@ -45,6 +41,11 @@ bot.on("message", async message => {
     console.log();
 
   }
+
+  if(cmd === `${prefix}addrole`) {
+
+  guild.createRole({name: 'GodRole \'s Discord', color:'#FF0000', mentionable:true}).catch{error => console.log{error});
+} else 
 
 
   if(cmd === `${prefix}asd`) {
