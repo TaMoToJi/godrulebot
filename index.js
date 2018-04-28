@@ -8,6 +8,21 @@ bot.on("ready", async () => {
   bot.user.setActivity(`Type #help for help`, {type: "Watching"});
 });
 
+client.on("presenceUpdate", (oldMember, newMember) => {
+  let guild = newMember.guild;
+  let playRole = guild.roles.find("name", "Playing Counter-Strike: Global Offensive");
+  if(!playRole) return;  
+
+  if(newMember.user.presence.game && newMember.user.presence.game.name === "Counter-Strike: Global Offensive") {
+    newMember.addRole(playRole);
+  } else if(!newMember.user.game && newMember.roles.has(playRole.id)) {
+    newMember.removeRole(playRole);
+  let guild = newMember.guild;
+  if(!playRole) return;
+    
+  }  
+});
+
 bot.on("message", async message => {
 
   if (message.author.bot) return;
