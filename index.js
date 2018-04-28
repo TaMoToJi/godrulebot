@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const client = new Discord.Client({disableEveryone: false});
 
-const responses = [
+const responses1 = [
    'Yes , You Gay !', 'No , You Not Gay !', 'Maybe', 'I Don`t Know', 'Nope', '50%'
 ]
 
@@ -62,7 +62,7 @@ client.on("message", async message => {
   if(cmd === `${prefix}gay`) {
    const embed1 = new Discord.RichEmbed()
    .setTitle(':pencil: TaMoToJi :')
-   .setDescription(`${responses1[Math.floor(Math.random() * responses.length)]`)
+   .setDescription(`${client.user.username}Says..` ,responses1)
    .setColor('RANDOM')
     message.channel.send(embed1);
 
