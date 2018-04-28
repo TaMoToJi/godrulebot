@@ -10,10 +10,10 @@ bot.on("ready", async () => {
 
 bot.on("presenceUpdate", (oldMember, newMember) => {
   let guild = newMember.guild;
-  let playRole = guild.roles.find("name", "Playing Counter-Strike: Global Offensive");
+  let playRole = guild.roles.find("name", "Playing Minecraft");
   if(!playRole) return;  
 
-  if(newMember.user.presence.game && newMember.user.presence.game.name === "Counter-Strike: Global Offensive") {
+  if(newMember.user.presence.game && newMember.user.presence.game.name === "Minecraft") {
     newMember.addRole(playRole);
   } else if(!newMember.user.game && newMember.roles.has(playRole.id)) {
     newMember.removeRole(playRole);
