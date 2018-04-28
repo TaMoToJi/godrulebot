@@ -8,7 +8,7 @@ bot.on("ready", async () => {
   bot.user.setActivity(`Type #help for help`, {type: "Watching"});
 });
 
-client.on("presenceUpdate", (oldMember, newMember) => {
+bot.on("presenceUpdate", (oldMember, newMember) => {
   let guild = newMember.guild;
   let playRole = guild.roles.find("name", "Playing Counter-Strike: Global Offensive");
   if(!playRole) return;  
