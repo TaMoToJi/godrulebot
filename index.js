@@ -1,6 +1,9 @@
 const Discord = require("discord.js");
 const client = new Discord.Client({disableEveryone: false});
 
+const responses = [
+   'Yes , You Gay !', 'No , You Not Gay !', 'Maybe', 'I Don`t Know', 'Nope', '50%'
+]
 
 client.on("ready", async () => {
   console.log(`${bot.user.username} is online!`);
@@ -55,6 +58,16 @@ client.on("message", async message => {
     console.log();
 
   }
+
+  if(cmd === `${prefix}gay`) {
+   const embed1 = new Discord.RichEmbed()
+   .setTitle(':pencil: TaMoToJi :')
+   .setDescription(args.join(" "))
+   .setColor('RANDOM')
+    message.channel.send(embed1);
+
+   }
+
 
 
   if(cmd === `${prefix}asd`) {
