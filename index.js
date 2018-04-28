@@ -57,9 +57,9 @@ client.on("message", async message => {
 
   if(cmd === `${prefix}radd`) {
     let myRole = message.guild.role.find('name', "ADMIN")
-    let member = message.mentions.member.();
+    let member = message.mentions.member.find();
     member.addRole(myRole).catch(console.error);
-    return message.channel.sand("Just Test Not Man Ten !")
+    return message.channel.sand("Just Test Not Man Ten !");
 
 
  }
