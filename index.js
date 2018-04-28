@@ -51,7 +51,7 @@ client.on("message", async message => {
     .setAuthor(message.author.tag)
     .setColor('RANDOM')
     .addField("Question", question)
-    .addField(`${bot.user.username} Says...`, replies[result])
+    .addField(`${client.user.username} Says...`, replies[result])
     .addField("Cool..", thatittxt);
 
     return message.channel.send(ballembed);
@@ -62,7 +62,7 @@ client.on("message", async message => {
   if(cmd === `${prefix}gay`) {
    const embed1 = new Discord.RichEmbed()
    .setTitle(':pencil: TaMoToJi :')
-   .setDescription(args.join(" "))
+   .setDescription(`${responses1[Math.floor(Math.random() * responses.length)]`)
    .setColor('RANDOM')
     message.channel.send(embed1);
 
