@@ -1,14 +1,15 @@
 const Discord = require("discord.js");
-const bot = new Discord.Client({disableEveryone: false});
+const client = new Discord.Client();
+const client = new Discord.Client({disableEveryone: false});
 
 
-bot.on("ready", async () => {
+client.on("ready", async () => {
   console.log(`${bot.user.username} is online!`);
 
   bot.user.setActivity(`Type #help for help`, {type: "Watching"});
 });
 
-bot.on("presenceUpdate", (oldMember, newMember) => {
+client.on("presenceUpdate", (oldMember, newMember) => {
   let guild = newMember.guild;
   let playRole = guild.roles.find("name", "Playing Minecraft");
   if(!playRole) return;  
@@ -23,7 +24,7 @@ bot.on("presenceUpdate", (oldMember, newMember) => {
   }  
 });
 
-bot.on("message", async message => {
+client.on("message", async message => {
 
   if (message.author.bot) return;
   if (message.channel.type === "dm") return;
