@@ -1,12 +1,11 @@
 const Discord = require("discord.js");
-const client = new Discord.Client();
 const client = new Discord.Client({disableEveryone: false});
 
 
 client.on("ready", async () => {
   console.log(`${bot.user.username} is online!`);
 
-  bot.user.setActivity(`Type #help for help`, {type: "Watching"});
+  client.user.setActivity(`Type #help for help`, {type: "Watching"});
 });
 
 client.on("presenceUpdate", (oldMember, newMember) => {
