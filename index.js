@@ -4,7 +4,7 @@ const client = new Discord.Client({disableEveryone: false});
 client.on("ready", async () => {
   console.log(`${client.user.username} is online!`);
 
-  client.user.setActivity(`Type #help for help`, {type: 4});
+  client.user.setActivity(`Type #help for help`, {type: 2});
 });
 
 client.on("presenceUpdate", (oldMember, newMember) => {
