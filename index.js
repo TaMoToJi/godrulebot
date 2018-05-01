@@ -99,10 +99,7 @@ var sayings = ["It is certain",
         const UserInfo = new Discord.RichEmbed()
             .setAuthor(message.author.username, message.author.avatarURL()) //Heading With Username & Their Avatar 
             .setTitle('UserInfo')
-            .setURL('www.google.com') //Any Vaild Link
             .setColor('RANDOM') //You Can Use HexColour Ex:- #000000
-            .setImage(message.author.avatarURL()) //Add Any Image URl || Image
-            .setThumbnail(message.author.avatarURL()) //Add Any Image URl || ThumbNail
             .addField('Bot', message.author.bot, true) //Returns True If Message Author = Bot || False If Message Author not Bot.
             .addField('Created At', message.author.createdAt, false) //The time the user was created || .createdTimestamp - The timestamp the user was created at
             .addField('Discrim', message.author.discriminator, true) //A discriminator/tag based on username for the user Ex:- 0001
