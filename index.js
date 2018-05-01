@@ -5,7 +5,7 @@ const client = new Discord.Client({disableEveryone: false});
 client.on("ready", async () => {
   console.log(`${client.user.username} is online!`);
 
-  client.user.setActivity(`Type #help for help`, {type: 2});
+  client.user.setActivity(`YouTube`, {type: 1});
 });
 
 client.on("presenceUpdate", (oldMember, newMember) => {
@@ -28,7 +28,7 @@ client.on("message", async message => {
   if (message.author.bot) return;
   if (message.channel.type === "dm") return;
 
-  let prefix = '#';
+  let prefix = 'tj!';
   let messageArray = message.content.split(" ");
   let cmd = messageArray[0];
   let args = messageArray.slice(1);
