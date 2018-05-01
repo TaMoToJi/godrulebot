@@ -109,7 +109,6 @@ var sayings = ["It is certain",
             .addField('Last Message ID', message.author.lastMessageID) //The ID of the last message sent by the user, if one was sent
             .addField('Presence', message.author.presence) //The presence of this user
             .addField('Presence Status', message.author.presence.status) //The presence status of this user
-            .addField('Presence Game', message.author.presence.activity.name) //The presence Game of this user
             .addField('Tag', message.author.tag) //The Discord "tag" for this user || Ex:- Sai Chinna#6718
             .addField('Username', message.author.username) //The username of the user || Ex:- Sai Chinna
             .addField('Nick Name', message.guild.member(target).displayName) //Nick Name In That (message sent) server || Define target as message Author Ex:- let target = message.author; || Add This Line in Top
