@@ -137,8 +137,7 @@ var sayings = ["It is certain",
 
         message.channel.send(UserInfo);
     }
-});  
-
+ 
 
   if(cmd === `${prefix}radd`) {
     let myRole = message.guild.role.find('name', "ADMIN")
