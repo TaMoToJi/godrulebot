@@ -97,7 +97,7 @@ var sayings = ["It is certain",
   
   if(cmd === `${prefix}userinfo`){
         const UserInfo = new Discord.RichEmbed()
-            .setAuthor(message.author.username, message.author.avatarURL()) //Heading With Username & Their Avatar 
+            .setAuthor(message.author.username)
             .setTitle('UserInfo')
             .setColor('RANDOM') //You Can Use HexColour Ex:- #000000
             .addField('Bot', message.author.bot, true) //Returns True If Message Author = Bot || False If Message Author not Bot.
