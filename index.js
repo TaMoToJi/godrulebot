@@ -95,7 +95,7 @@ var sayings = ["It is certain",
 			message.channel.send({embed: ballEmb})
 }
   
-  if(comd === `${prefix}userinfo`){
+  if(cmd === `${prefix}userinfo`){
         const UserInfo = new Discord.RichEmbed()
             .setAuthor(message.author.username, message.author.avatarURL()) //Heading With Username & Their Avatar 
             .setTitle('UserInfo')
