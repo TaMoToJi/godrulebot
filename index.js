@@ -123,10 +123,10 @@ var sayings = ["It is certain",
   }
 
  if(cmd === `${prefix}ping`){
-    const newemb = new Discord.RichEmbed()
-    .setColor(0xFFBF00)
-    .setDescription("Ping new Date().getTime() - message.createdTimestamp +  ms :satellite:  ")
-     message.channel.send({embed: newemb})
+const newemb = new Discord.RichEmbed()
+.setColor(0xFFBF00)
+.addField('```Latency: ```', new Date().getTime() - message.createdTimestamp + " ms ")
+message.channel.send({embed: newemb})
 }
 
 
