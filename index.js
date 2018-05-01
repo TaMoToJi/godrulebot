@@ -1,17 +1,6 @@
 const Discord = require("discord.js");
 const client = new Discord.Client({disableEveryone: false});
-const fs = require("fs");
 
-fs.readdir("./commands/", (err, files) => {
-
-  if(err) console.log(err);
-  
-  let jsfile = files.filter(f => f.split(".").pop() === "js")
-  if(jsfile.length <= 0){
-    console.log("can find commands")
-  return;
-  }
-})
 
 client.on("ready", async () => {
   console.log(`${client.user.username} is online!`);
