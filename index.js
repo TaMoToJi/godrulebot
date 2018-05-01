@@ -2,7 +2,7 @@ const Discord = require("discord.js");
 const client = new Discord.Client({disableEveryone: false});
 const fs = require("fs");
 
-fs.readdir("./commands/", (err, file) => {
+fs.readdir("./commands/", (err, files) => {
 
   if(err) console.log(err);
   
