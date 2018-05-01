@@ -2,6 +2,14 @@ const Discord = require("discord.js");
 const client = new Discord.Client({disableEveryone: false});
 const fs = require("fs");
 
+fs.readdir("./commands/", (err, file) => {
+
+  if(err) console.log(err);
+  if(jsfile.length <= 0){
+  return;
+  }
+})
+
 client.on("ready", async () => {
   console.log(`${client.user.username} is online!`);
 
