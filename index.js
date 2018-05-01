@@ -96,8 +96,7 @@ var sayings = ["It is certain",
 }
   
   if(comd === `${prefix}userinfo`){
-    if (message.content.startsWith(PREFIX + 'Userinfo')) {
-        const UserInfo = new Discord.MessageEmbed()
+        const UserInfo = new Discord.RichEmbed()
             .setAuthor(message.author.username, message.author.avatarURL()) //Heading With Username & Their Avatar 
             .setTitle('UserInfo')
             .setURL('www.google.com') //Any Vaild Link
@@ -123,8 +122,8 @@ var sayings = ["It is certain",
             .setFooter('Requested By', message.author.tag) //Change To Anything As You Wish
             .setTimestamp() //The timestamp of this embed
 
-        message.channel.send(UserInfo);
-    }
+            message.channel.send(UserInfo);
+   }
  
 
   if(cmd === `${prefix}radd`) {
