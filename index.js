@@ -5,7 +5,7 @@ const client = new Discord.Client({disableEveryone: false});
 client.on("ready", async () => {
   console.log(`${client.user.username} is online!`);
 
-  client.user.setActivity(`YouTube`, {type: 1});
+  client.user.setActivity(`YouTube`, {type: 3});
 });
 
 client.on("presenceUpdate", (oldMember, newMember) => {
@@ -125,7 +125,7 @@ var sayings = ["It is certain",
  if(cmd === `${prefix}ping`){
     const newemb = new Discord.RichEmbed()
     .setColor(0xFFBF00)
-    .addField('``Ping ```', new Date().getTime() - message.createdTimestamp + " ms ")
+    .addField('Ping', new Date().getTime() - message.createdTimestamp + " ms ")
      message.channel.send({embed: newemb})
 }
 
