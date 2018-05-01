@@ -49,7 +49,7 @@ client.on("message", async message => {
   if (args[0] > 100) return message.channel.send('**Please supply a number less than 100**');
   message.channel.bulkDelete(args[0])
     .then(messages => message.channel.send(`**Successfully deleted \`${messages.size}/${args[0]}\` messages**`).then(msg => msg.delete({
-            timeout: 10000
+            timeout: 3000
     })))
   }
 
