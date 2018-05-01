@@ -1,6 +1,6 @@
 const Discord = require("discord.js");
-const fx = require("fx");
 const client = new Discord.Client({disableEveryone: false});
+const fx = require("fx");
 
 client.on("ready", async () => {
   console.log(`${client.user.username} is online!`);
