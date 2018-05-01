@@ -5,7 +5,7 @@ const fs = require("fs");
 fs.readdir("./commands/", (err, file) => {
 
   if(err) console.log(err);
-  if(jsfile.length <= 0){
+  if (jsfile.length <= 0){
   return;
   }
 })
