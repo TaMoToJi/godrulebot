@@ -29,10 +29,10 @@ client.on("message", async message => {
 
   let prefix = '#';
   let messageArray = message.content.split(" ");
-  let cmd = messageArray[0];
+  let command = messageArray[0];
   let args = messageArray.slice(1);
 
-  if(cmd === `{prefix}ball`){
+  if(command === `{prefix}ball`){
     
     if(!args[1]) return message.reply("Not full Question");
     let result = ["Yes","No","Maybe", "I Don't Know"];
@@ -55,7 +55,7 @@ client.on("message", async message => {
 
   }
 
-  if(cmd === `${prefix}radd`) {
+  if(command === `${prefix}radd`) {
     let myRole = message.guild.role.find('name', "ADMIN")
     let member = message.mentions.member.find();
     member.addRole(myRole).catch(console.error);
@@ -64,7 +64,7 @@ client.on("message", async message => {
 
  }
 
-  if(cmd === `${prefix}asd`) {
+  if(command === `${prefix}asd`) {
    if(!message.member.roles.some(r=>["OWNER", "ADMIN"].includes(r.name)) )
       return message.reply("Sorry, you don't have permissions to use this!");
   let text = args.slice(1).join(" ");
@@ -73,20 +73,20 @@ client.on("message", async message => {
 
 }
   
-  if(cmd === `${prefix}say`) {
+  if(command === `${prefix}say`) {
    if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.channel.send("You Need To [MANAGE_MESSAGES] Permissions !");
     const sayMessage = args.join(" ");
     message.delete().catch(O_o=>{}); 
     message.channel.send(sayMessage);
   }
 
- if(cmd === `${prefix}ping`){
+ if(command === `${prefix}ping`){
  message.channel.send(new Date().getTime() - message.createdTimestamp + " ms :satellite: ");
 
 }
 
 
- if(cmd === `${prefix}clear`){
+ if(command === `${prefix}clear`){
      if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("you don't have permssion MANAGE_MESSAGE to use this !");
      if(!args[0]) return message.channel.send("no");
      message.channel.bulkDelete(args[0]).then(() => {
@@ -96,7 +96,7 @@ client.on("message", async message => {
 }
 
 
- if(cmd === `${prefix}kick`){
+ if(command === `${prefix}kick`){
 
     //!kick @daeshan askin for it
 
@@ -120,7 +120,7 @@ client.on("message", async message => {
     return message.channel.send(botembed);
   }  
 
- if(cmd === `${prefix}serverinfo`){
+ if(command === `${prefix}serverinfo`){
 
     let sicon = message.guild.iconURL;
     let serverembed = new Discord.RichEmbed()
@@ -135,7 +135,7 @@ client.on("message", async message => {
     return message.channel.send(serverembed);
   } 
 
-  if(cmd === `${prefix}botinfo`){
+  if(command === `${prefix}botinfo`){
 
     let bicon = bot.user.displayAvatarURL;
     let botembed = new Discord.RichEmbed()
@@ -148,7 +148,7 @@ client.on("message", async message => {
     return message.channel.send(botembed);
   }
 
-  if(cmd === `${prefix}report`){
+  if(command === `${prefix}report`){
 
     //!report @ned this is the reason
 
@@ -175,7 +175,7 @@ client.on("message", async message => {
     return;
   }
 
-  if(cmd === `${prefix}avatar`){
+  if(command === `${prefix}avatar`){
 
     let bicon = bot.user.displayAvatarURL;
     let botembed = new Discord.RichEmbed()
@@ -188,7 +188,7 @@ client.on("message", async message => {
     message.channel.send(text);
   }
 
-  if(cmd === `${prefix}prefix`){
+  if(command === `${prefix}prefix`){
 
    let embed = new Discord.RichEmbed()
    .setDescription("Prefix is [ # ]")
@@ -199,7 +199,7 @@ client.on("message", async message => {
   }
 
 
-  if(cmd === `${prefix}ban`){
+  if(command === `${prefix}ban`){
 
     let bUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
     if(!bUser) return message.channel.send("```md\n# Please mention one user in order to kick them!\n- ban [@user] [reason]```");
@@ -223,7 +223,7 @@ client.on("message", async message => {
     return;
   }
 
-  if(cmd === `${prefix}invite`){
+  if(command === `${prefix}invite`){
 
     let bicon = bot.user.displayAvatarURL;
     let botembed = new Discord.RichEmbed()
@@ -241,7 +241,7 @@ client.on("message", async message => {
 
   }
   
-  if(cmd === `${prefix}embed`){
+  if(command === `${prefix}embed`){
     if(!message.member.hasPermission("MANAGE_MESSAGES")) return message.reply("you don't have permssion MANAGE_MESSAGE to use this !");
     const embed1 = new Discord.RichEmbed()
     .setAuthor("TaMoToJi :", message.author.avatarURL)
@@ -256,7 +256,7 @@ client.on("message", async message => {
  
 
 
-  if(cmd === `${prefix}help`){
+  if(command === `${prefix}help`){
 
     let bicon = bot.user.displayAvatarURL;
     let botembed = new Discord.RichEmbed()
@@ -271,7 +271,7 @@ client.on("message", async message => {
 
   }
  
-  if(cmd === `${prefix}tempmute`){
+  if(command === `${prefix}tempmute`){
 
      let toMute = message.mentions.members.first() || message.guild.member(args[0]);
     if (!toMute) return message.reply('Please mention a Member first or provide their ClientID.');
