@@ -125,7 +125,7 @@ var sayings = ["It is certain",
  if(cmd === `${prefix}ping`){
     const newemb = new Discord.RichEmbed()
     .setColor(0xFFBF00)
-    .addField('Ping', new Date().getTime() - message.createdTimestamp + " ms ")
+    .setDescription("Ping new Date().getTime() - message.createdTimestamp +  ms :satellite:  ")
      message.channel.send({embed: newemb})
 }
 
