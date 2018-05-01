@@ -5,7 +5,10 @@ const fs = require("fs");
 fs.readdir("./commands/", (err, file) => {
 
   if(err) console.log(err);
-  if (jsfile.length <= 0){
+  
+  let jsfile = file.filter(f => f.split(".").pop() === "js")
+  if(jsfile.length <= 0){
+    console.log("can find commands")
   return;
   }
 })
